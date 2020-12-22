@@ -1,0 +1,6 @@
+[] Integrate auth in control panel
+[] Create a page to add a project
+[] Create a page to edit a project
+[] Create a page to delete a project
+
+[] Or when admin is logged show icons to delete and edit in card project
