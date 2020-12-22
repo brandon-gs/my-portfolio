@@ -4,7 +4,9 @@
 //
 // import User from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+export interface Project {
+  title: string;
+  thumbnail: string;
 }
+
+export type ListProject = Array<Project>;
