@@ -9,4 +9,7 @@ export default makeStyles((theme) => ({
     width: theme.spacing(5),
     height: theme.spacing(5),
   },
+  toolbarFill: {
+    backgroundColor: theme.palette.primary.main,
+  },
 }));

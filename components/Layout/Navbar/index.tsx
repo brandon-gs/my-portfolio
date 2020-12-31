@@ -28,7 +28,7 @@ function HideOnScroll(props: Props) {
   );
 }
 
-export default function Navbar() {
+export default function Navbar(): React.ReactElement {
   const classes = useStyles();
 
   const [isOnTop, setIsOnTop] = useState<boolean>(true);
@@ -43,26 +43,33 @@ export default function Navbar() {
     });
   });
 
+  const boxShadow = isOnTop
+    ? "none"
+    : "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)";
+
   return (
-    <HideOnScroll>
-      <AppBar position={isOnTop ? "static" : "sticky"} className={classes.grow}>
-        <Toolbar>
-          <Typography
-            component={Link}
-            href={"/"}
-            naked
-            variant="h6"
-            className={classes.logo}
-          >
-            <img
-              src={`${process.env.ASSET_PREFIX}/img/logo_sm.png`}
-              alt="Logo de Brandon"
-            />
-          </Typography>
-          <div className={classes.grow} />
-          <DesktopMenu />
-        </Toolbar>
-      </AppBar>
-    </HideOnScroll>
+    <>
+      <HideOnScroll>
+        <AppBar className={classes.grow} style={{ boxShadow }}>
+          <Toolbar>
+            <Typography
+              component={Link}
+              href={"/"}
+              naked
+              variant="h6"
+              className={classes.logo}
+            >
+              <img
+                src={`${process.env.ASSET_PREFIX}/img/logo_sm.png`}
+                alt="Logo de Brandon"
+              />
+            </Typography>
+            <div className={classes.grow} />
+            <DesktopMenu />
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
+      <Toolbar className={classes.toolbarFill} />
+    </>
   );
 }
