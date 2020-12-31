@@ -4,7 +4,7 @@ import { localeEs, localeEn } from "./locale";
 import useStyles from "./styles";
 import { useTranslation } from "hooks";
 
-export default function Info() {
+export default function Info(): React.ReactElement {
   const classes = useStyles();
 
   const { t } = useTranslation(localeEs, localeEn);

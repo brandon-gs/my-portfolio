@@ -13,7 +13,7 @@ import { Link } from "components";
 import useStyles from "./styles";
 import { useTranslation } from "hooks";
 
-export default function Dashboard() {
+export default function Dashboard(): React.ReactElement {
   const classes = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
   return (
@@ -21,7 +21,7 @@ export default function Dashboard() {
       <Container maxWidth="lg">
         <Grid container direction="column" justify="center" alignItems="center">
           <Grid item>
-            <img src="/img/logo_sm.png" />
+            <img src={`${process.env.ASSET_PREFIX}/img/logo_sm.png`} />
           </Grid>
           <Grid item>
             <Typography

@@ -5,7 +5,7 @@ import { useTranslation } from "hooks";
 import useStyles from "./styles";
 import listSkills from "./helpers/listSkills";
 
-export default function ListSkills() {
+export default function ListSkills(): React.ReactElement {
   const classes = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
 

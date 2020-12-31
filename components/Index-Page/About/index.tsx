@@ -6,7 +6,7 @@ import Info from "./Info";
 // Hooks
 import useStyles from "./styles";
 
-export default function About() {
+export default function About(): React.ReactElement {
   const classes = useStyles();
 
   return (
