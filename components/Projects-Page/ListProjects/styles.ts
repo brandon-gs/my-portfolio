@@ -1,8 +1,15 @@
 import { makeStyles } from "@material-ui/core";
 
 export default makeStyles((theme) => ({
-  title: {
-    textAlign: "center",
-    margin: theme.spacing(2),
+  container: {
+    margin: theme.spacing(0, "auto"),
+    padding: theme.spacing(12, 0),
+    maxWidth: 950,
+    [theme.breakpoints.down("md")]: {
+      maxWidth: 600,
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(0, 1),
+    },
   },
 }));

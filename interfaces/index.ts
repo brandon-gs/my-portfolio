@@ -7,6 +7,13 @@
 export interface Project {
   title: string;
   thumbnail: string;
+  finished: boolean;
+  descriptionEn: string;
+  descriptionEs: string;
+  skills: Array<string>;
+  githubURL: string;
+  launchURL: string;
+  pageURL: string;
 }
 
 export type ListProject = Array<Project>;
