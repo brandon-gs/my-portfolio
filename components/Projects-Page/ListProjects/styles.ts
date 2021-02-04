@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 export default makeStyles((theme) => ({
   container: {
     margin: theme.spacing(0, "auto"),
-    padding: theme.spacing(12, 0),
+    padding: theme.spacing(5, 0),
     maxWidth: 950,
     [theme.breakpoints.down("md")]: {
       maxWidth: 600,

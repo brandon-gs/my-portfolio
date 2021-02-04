@@ -18,6 +18,8 @@ export default function CardProject({
   const classes = useStyles();
 
   const localeEs = {
+    progress: "Proyecto en progreso",
+    finish: "Proyecto terminado",
     description: project.descriptionEs,
     tooltips: {
       info: "Leer más",
@@ -26,6 +28,8 @@ export default function CardProject({
     },
   };
   const localeEn = {
+    progress: "Project in progress",
+    finish: "Finished project",
     description: project.descriptionEn,
     tooltips: {
       info: "Read more",
@@ -52,7 +56,7 @@ export default function CardProject({
           gutterBottom
           className={project.finished ? classes.finished : classes.inProgress}
         >
-          {project.finished ? "Finished project" : "Project in progress"}
+          {project.finished ? t.finish : t.progress}
         </Typography>
         <Typography variant="h4" component="h2" className={classes.title}>
           {project.title}

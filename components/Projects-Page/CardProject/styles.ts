@@ -9,11 +9,11 @@ export default makeStyles((theme) => ({
     gap: 10,
     gridTemplateColumns: "repeat(12, 1fr)",
     alignItems: "center",
-    marginBottom: 100,
+    marginBottom: theme.spacing(10),
     transform: "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)",
     transition,
     [theme.breakpoints.down("md")]: {
-      marginBottom: 70,
+      marginBottom: theme.spacing(7),
       color: "#FFF",
     },
   },
@@ -61,11 +61,17 @@ export default makeStyles((theme) => ({
     color: theme.palette.success.dark,
     fontWeight: "bold",
     letterSpacing: 1.1,
+    [theme.breakpoints.down("md")]: {
+      color: theme.palette.success.light,
+    },
   },
   inProgress: {
     color: theme.palette.error.main,
     fontWeight: "bold",
     letterSpacing: 1.1,
+    [theme.breakpoints.down("md")]: {
+      color: theme.palette.error.light,
+    },
   },
   title: {
     margin: theme.spacing(0, 0, 3),
