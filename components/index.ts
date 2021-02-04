@@ -6,3 +6,5 @@ export * from "./Layout";
 export * from "./Index-Page";
 // Projects Page
 export * from "./Projects-Page";
+// Contact Page
+export * from "./Contact-Page";
