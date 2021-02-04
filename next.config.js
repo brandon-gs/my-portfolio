@@ -1,6 +1,6 @@
 const dev = process.env.NODE_ENV !== "production";
 
-const prefix = "/portfolio";
+const prefix = "";
 
 module.exports = {
   i18n: {
