@@ -40,7 +40,7 @@ export default function BottomMenu() {
       <div className={classes.bottomMenuSpace}></div>
       <BottomNavigation
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_, newValue) => {
           redirectToPage(newValue);
         }}
         showLabels

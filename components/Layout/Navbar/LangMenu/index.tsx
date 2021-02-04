@@ -8,7 +8,6 @@ import {
   MenuList,
   Paper,
   Popper,
-  useMediaQuery,
 } from "@material-ui/core";
 import {
   Translate as TranslateIcon,
@@ -23,7 +22,6 @@ import { useTranslation } from "hooks";
 
 export default function LanguageMenu() {
   const classes = useStyles();
-  const matchMobile = useMediaQuery("(max-width:800px)");
   const {
     t,
     router,
@@ -65,7 +63,7 @@ export default function LanguageMenu() {
   const prevOpen = useRef(open);
   useEffect(() => {
     if (prevOpen.current && !open) {
-      anchorRef.current!.focus();
+      anchorRef.current?.focus();
     }
     prevOpen.current = open;
   }, [open]);
