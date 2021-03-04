@@ -9,7 +9,7 @@ import { localeEn, localeEs } from "../locale";
 // Hooks
 import useStyles from "./styles";
 
-export default function DesktopMenu() {
+export default function DesktopMenu(): JSX.Element {
   const { t } = useTranslation(localeEs, localeEn);
   const classes = useStyles();
   return (

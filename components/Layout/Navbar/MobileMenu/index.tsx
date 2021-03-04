@@ -5,13 +5,13 @@ import { Link } from "components";
 import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
-  YouTube as YouTubeIcon,
+  // YouTube as YouTubeIcon,
 } from "@material-ui/icons";
 import LanguageMenu from "../LangMenu";
 // Hooks
 import useStyles from "./styles";
 
-export default function MobileMenu() {
+export default function MobileMenu(): JSX.Element {
   const classes = useStyles();
 
   return (
@@ -33,14 +33,14 @@ export default function MobileMenu() {
       >
         <LinkedInIcon />
       </Link>
-      <Link
+      {/* <Link
         href="https://www.youtube.com/channel/UC1O0G0cCW6JfDT8WzjesWLg/videos"
         color="inherit"
         target="_blank"
         className={classes.icon}
       >
         <YouTubeIcon />
-      </Link>
+      </Link> */}
     </>
   );
 }

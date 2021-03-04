@@ -8,7 +8,7 @@ export default makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
     width: "100%",
-    height: "calc(100% - 64px)",
+    height: "calc(100vh - 64px)",
     paddingBottom: theme.spacing(5),
     [theme.breakpoints.only("xs")]: {
       height: "calc(100% - 56px)",

@@ -36,7 +36,7 @@ export default function FormContact(): React.ReactElement {
         <Grid item className={classes.emailLinkContainer}>
           <a href="mailto:brandongs180@gmail.com" className={classes.emailLink}>
             <MailOutline className={classes.emailIcon} />
-            Send me a message
+            {t.email}
           </a>
         </Grid>
         <Grid item className={classes.emailLinkContainer}>
@@ -59,7 +59,7 @@ export default function FormContact(): React.ReactElement {
                 style={{ position: "absolute", left: -346.6, height: 24 }}
               />
             </div>
-            Contratame en workana
+            {t.workana}
           </a>
         </Grid>
         <Grid item className={classes.emailLinkContainer}>
@@ -71,7 +71,7 @@ export default function FormContact(): React.ReactElement {
                 height: 18,
               }}
             />
-            Contratame en fiverr
+            {t.fiverr}
           </a>
         </Grid>
       </Grid>

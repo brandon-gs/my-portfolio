@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && tsc --project tsconfig.json",
-    "start": "NODE_ENV=production node build/index.js",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "type-check": "tsc",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
@@ -15,6 +15,7 @@
     "jsonwebtoken": "^8.5.1",
     "next": "latest",
     "next-iron-session": "^4.1.10",
+    "next-page-transitions": "^1.0.0-beta.2",
     "nprogress": "^0.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
