@@ -8,11 +8,12 @@
     "noUnusedLocals": true,
     "target": "es6",
     "module": "commonjs",
+    "moduleResolution": "node",
     "outDir": "build",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "client"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

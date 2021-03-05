@@ -1,3 +1,5 @@
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
 module.exports = {
   dir: "./client",
   i18n: {
@@ -5,13 +7,21 @@ module.exports = {
     defaultLocale: "en",
   },
   webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      issuer: {
-        test: /\.(js|ts)x?$/,
-      },
-      use: ["@svgr/webpack"],
-    });
+    if (config.resolve.plugins) {
+      config.resolve.plugins.push(
+        new TsconfigPathsPlugin({
+          configFile: "./client/tsconfig.json",
+          baseUrl: "./client/",
+        })
+      );
+    } else {
+      config.resolve.plugins = [
+        new TsconfigPathsPlugin({
+          configFile: "./client/tsconfig.json",
+          baseUrl: "./client/",
+        }),
+      ];
+    }
     return config;
   },
 };
