@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     height: "calc(100vh - 64px)",
     paddingBottom: theme.spacing(5),
     [theme.breakpoints.only("xs")]: {
-      height: "calc(100% - 56px)",
+      height: "calc(100vh - 56px)",
     },
   },
   name: {

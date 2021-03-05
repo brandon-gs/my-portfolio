@@ -7,7 +7,7 @@ import {
   LinkedIn as LinkedInIcon,
   // YouTube as YouTubeIcon,
 } from "@material-ui/icons";
-import LanguageMenu from "../LangMenu";
+// import LanguageMenu from "../LangMenu";
 // Hooks
 import useStyles from "./styles";
 
@@ -16,7 +16,7 @@ export default function MobileMenu(): JSX.Element {
 
   return (
     <>
-      <LanguageMenu />
+      {/* <LanguageMenu /> */}
       <Link
         href="https://github.com/brandon-gs"
         color="inherit"
