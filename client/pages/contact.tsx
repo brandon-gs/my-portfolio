@@ -15,6 +15,14 @@ export default function Contact(): JSX.Element {
     <Fragment>
       <Head>
         <title>Brandon García | {t.contact} </title>
+        <meta
+          name="keywords"
+          content="brandon, brandon garcia, brandongs, frontend developer, backend developer, freelance, software engineering, software engineering projects, create web apps, create mobile apps, create software"
+        />
+        <meta
+          name="description"
+          content="Get in touch with a software engineering to do your dream project with the best quality and great scalability"
+        />
       </Head>
       <Navbar />
       <FormContact />
