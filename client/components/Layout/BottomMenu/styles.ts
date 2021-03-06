@@ -18,7 +18,9 @@ export default makeStyles((theme) => ({
     color: `${theme.palette.primary.contrastText} !important`,
   },
   bottomMenuSpace: {
-    height: theme.spacing(10),
-    width: "100%",
+    [theme.breakpoints.only("xs")]: {
+      height: theme.spacing(10),
+      width: "100%",
+    },
   },
 }));
