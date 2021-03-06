@@ -32,8 +32,14 @@ export default function Dashboard(): React.ReactElement {
               className={classes.name}
             >
               <Typewriter
+                options={{
+                  loop: true,
+                }}
                 onInit={(typewriter) => {
-                  typewriter.typeString("Brandon García").start();
+                  typewriter
+                    .typeString("Brandon García")
+                    .start()
+                    .pauseFor(2500);
                 }}
               />
             </Typography>
