@@ -1,7 +1,11 @@
+import "dotenv/config";
 import app from "./app";
 import next from "next";
 
 const dev = process.env.NODE_ENV !== "production";
+
+console.log(dev);
+
 const nextApp = next({
   dir: "./client",
   dev,
