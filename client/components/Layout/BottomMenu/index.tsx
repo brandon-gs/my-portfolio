@@ -30,9 +30,9 @@ export default function BottomMenu() {
     return index === value ? classes.itemActive : classes.item;
   };
 
-  const redirectToPage = (index: number) => {
+  const redirectToPage = async (index: number) => {
     const page = pages[index];
-    router.push(page);
+    await router.push(page);
   };
 
   return (
