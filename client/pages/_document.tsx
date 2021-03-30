@@ -1,7 +1,15 @@
+import React, { Fragment } from "react";
+// Nextjs Document
 import Document, { Html, Head, Main, NextScript } from "next/document";
+// Theme
 import theme from "utils/theme";
 import { ServerStyleSheets } from "@material-ui/core";
-import React, { Fragment } from "react";
+// Emotion
+import { cache } from "./_app";
+import createEmotionServer from "@emotion/server/create-instance";
+
+// Create emotion server
+const { extractCritical } = createEmotionServer(cache);
 
 interface GoogleTags {
   __html: string;
@@ -61,12 +69,18 @@ MyDocument.getInitialProps = async (ctx) => {
       enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
     });
   const initialProps = await Document.getInitialProps(ctx);
+  const styles = extractCritical(initialProps.html);
 
   return {
     ...initialProps,
     styles: [
       ...React.Children.toArray(initialProps.styles),
       sheets.getStyleElement,
+      <style
+        key="emotion-style-tag"
+        data-emotion={`css ${styles.ids.join(" ")}`}
+        dangerouslySetInnerHTML={{ __html: styles.css }}
+      />,
     ],
   };
 };
