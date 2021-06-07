@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/",
-    "build": "next build client/ && tsc --project client/tsconfig.json && tsc --project tsconfig.json",
-    "start": "NODE_ENV=production node build/"
+    "dev": "next client/",
+    "build": "next build client/",
+    "export": "next export client/",
+    "start": "next start client/"
   },
   "keywords": [],
   "author": "",
@@ -20,10 +21,13 @@
     "@material-ui/icons": "^4.11.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "i18next": "^19.9.2",
+    "i18nextnext": "*",
     "next": "^10.0.7",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-i18next": "^11.10.0",
     "react-icons": "^4.2.0",
     "react-lazy-load": "^3.1.13",
     "react-material-ui-carousel": "^2.2.6",

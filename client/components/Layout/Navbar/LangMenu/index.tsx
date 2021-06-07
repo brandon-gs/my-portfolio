@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, Fragment } from "react";
 // Components
 import {
   Button,
-  ClickAwayListener,
   Grow,
   MenuItem,
   MenuList,
@@ -22,13 +21,10 @@ import { useTranslation } from "hooks";
 
 export default function LanguageMenu() {
   const classes = useStyles();
-  const {
-    t,
-    router,
-    defaultLocale,
-    isSpanishPage,
-    isEnglishPage,
-  } = useTranslation(localeEs, localeEn);
+  const { t, router, isSpanishPage, isEnglishPage } = useTranslation(
+    localeEs,
+    localeEn
+  );
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -38,19 +34,23 @@ export default function LanguageMenu() {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (locale: string) => async (
-    event: React.MouseEvent<EventTarget>
-  ) => {
-    const existsAnchorRef =
-      anchorRef.current &&
-      anchorRef.current.contains(event.target as HTMLElement);
-    if (existsAnchorRef) {
-      return;
-    }
-    setOpen(false);
-    // Replace route
-    await router.replace(router.asPath, router.asPath, { locale });
-  };
+  const handleClose =
+    (locale: string) => async (event: React.MouseEvent<EventTarget>) => {
+      const existsAnchorRef =
+        anchorRef.current &&
+        anchorRef.current.contains(event.target as HTMLElement);
+      if (existsAnchorRef) {
+        return;
+      }
+      setOpen(false);
+      // Replace route
+      router.push({
+        pathname: router.route,
+        query: {
+          locale,
+        },
+      });
+    };
 
   const handleListKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Tab") {
@@ -100,39 +100,37 @@ export default function LanguageMenu() {
             }}
           >
             <Paper>
-              <ClickAwayListener onClickAway={handleClose(defaultLocale)}>
-                <MenuList
-                  autoFocusItem={open}
-                  id="menu-list-grow"
-                  onKeyDown={handleListKeyDown}
-                  className={classes.menuList}
+              <MenuList
+                autoFocusItem={open}
+                id="menu-list-grow"
+                onKeyDown={handleListKeyDown}
+                className={classes.menuList}
+              >
+                <MenuItem
+                  onClick={handleClose("es")}
+                  className={
+                    isSpanishPage ? classes.flagActive : classes.flagContainer
+                  }
                 >
-                  <MenuItem
-                    onClick={handleClose("es")}
-                    className={
-                      isSpanishPage ? classes.flagActive : classes.flagContainer
-                    }
-                  >
-                    <img
-                      alt="Spanish flag"
-                      src="/img/flags/spain.png"
-                      className={classes.flagImage}
-                    />
-                    {t.spanish}
-                  </MenuItem>
-                  <MenuItem
-                    onClick={handleClose("en")}
-                    className={isEnglishPage ? classes.flagActive : undefined}
-                  >
-                    <img
-                      alt="United Kingdom flag"
-                      src="/img/flags/united-kingdom.png"
-                      className={classes.flagImage}
-                    />
-                    {t.english}
-                  </MenuItem>
-                </MenuList>
-              </ClickAwayListener>
+                  <img
+                    alt="Spanish flag"
+                    src="/img/flags/spain.png"
+                    className={classes.flagImage}
+                  />
+                  {t.spanish}
+                </MenuItem>
+                <MenuItem
+                  onClick={handleClose("en")}
+                  className={isEnglishPage ? classes.flagActive : undefined}
+                >
+                  <img
+                    alt="United Kingdom flag"
+                    src="/img/flags/united-kingdom.png"
+                    className={classes.flagImage}
+                  />
+                  {t.english}
+                </MenuItem>
+              </MenuList>
             </Paper>
           </Grow>
         )}

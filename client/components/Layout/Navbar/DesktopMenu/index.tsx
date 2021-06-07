@@ -10,18 +10,33 @@ import { localeEn, localeEs } from "../locale";
 import useStyles from "./styles";
 
 export default function DesktopMenu(): JSX.Element {
-  const { t } = useTranslation(localeEs, localeEn);
+  const { t, defaultLocale } = useTranslation(localeEs, localeEn);
   const classes = useStyles();
   return (
     <>
       <div className={classes.sectionDesktop}>
-        <Button color="inherit" component={Link} href="/" naked>
+        <Button
+          color="inherit"
+          component={Link}
+          href={`/${defaultLocale}`}
+          naked
+        >
           {t.home}
         </Button>
-        <Button color="inherit" component={Link} href="/projects" naked>
+        <Button
+          color="inherit"
+          component={Link}
+          href={`/${defaultLocale}/projects`}
+          naked
+        >
           {t.projects}
         </Button>
-        <Button color="inherit" component={Link} href="/contact" naked>
+        <Button
+          color="inherit"
+          component={Link}
+          href={`/${defaultLocale}/contact`}
+          naked
+        >
           {t.contact}
         </Button>
         <Button

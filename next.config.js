@@ -2,9 +2,30 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   dir: "./client",
-  i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en",
+  target: "serverless",
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/en",
+        permanent: true,
+      },
+      {
+        source: "/projects",
+        destination: "/en/projects",
+        permanent: true,
+      },
+      {
+        source: "/contact",
+        destination: "/en/contact",
+        permanent: true,
+      },
+      {
+        source: "/projects/job-system",
+        destination: "/en/projects/job-system",
+        permanent: true,
+      },
+    ];
   },
   webpack(config) {
     if (config.resolve.plugins) {
