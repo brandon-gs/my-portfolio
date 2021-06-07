@@ -12,4 +12,10 @@ export default makeStyles((theme) => ({
       margin: theme.spacing(0, 1),
     },
   },
+  inProgress: {
+    color: theme.palette.error.main,
+  },
+  finished: {
+    color: theme.palette.success.dark,
+  },
 }));

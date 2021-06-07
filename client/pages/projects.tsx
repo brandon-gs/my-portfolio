@@ -3,7 +3,7 @@ import Head from "next/head";
 import { BottomMenu, ListProjects, Navbar } from "components";
 import { useTranslation } from "hooks";
 
-export default function ProjectsPage() {
+export default function ProjectsPage(): JSX.Element {
   const localeEs = {
     projects: "Proyectos",
   };

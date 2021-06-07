@@ -8,7 +8,7 @@ const getThumbnail = (title: string) => {
   return `${resources}/${title}/preview.png`;
 };
 
-export const featuredProjects: ListProject = [
+export const currentProjects: ListProject = [
   {
     title: "storymash",
     thumbnail: getThumbnail("storymash"),
@@ -22,6 +22,9 @@ export const featuredProjects: ListProject = [
     pageURL: "",
     skills: ["Typescript", "Next.js", "Express", "mongodb"].reverse(),
   },
+];
+
+export const featuredProjects: ListProject = [
   {
     title: "findmash",
     thumbnail: getThumbnail("findmash"),
@@ -47,6 +50,19 @@ export const featuredProjects: ListProject = [
     launchURL: `${GITHUB_PAGE}/sortmash`,
     pageURL: "",
     skills: ["React", "Redux", "JQuery"].reverse(),
+  },
+  {
+    title: "job management",
+    thumbnail: getThumbnail("almerimur"),
+    finished: true,
+    descriptionEn:
+      "In this project I built a system that allows managing the jobs of mechanics and drivers of a Spanish company.",
+    descriptionEs:
+      "Una aplicación web para visualizar algoritmos de ordenamiento, puedes ver las diferencias entre los distintos algoritmos.",
+    githubURL: ``,
+    launchURL: ``,
+    pageURL: "/projects/job-system",
+    skills: ["React", "React Native", "PHP"].reverse(),
   },
   {
     title: "distrito pyme",
