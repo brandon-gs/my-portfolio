@@ -124,7 +124,13 @@ export default function CardProject({
       </div>
       <div className={classes.imageContainer}>
         <a
-          href={project.launchURL ? project.launchURL : project.githubURL}
+          href={
+            project.launchURL
+              ? project.launchURL
+              : project.githubURL
+              ? project.githubURL
+              : project.pageURL
+          }
           target="__blank"
           className={classes.imageLink}
         >
