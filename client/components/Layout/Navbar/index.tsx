@@ -34,13 +34,22 @@ export default function Navbar(): React.ReactElement {
   const [isOnTop, setIsOnTop] = useState<boolean>(true);
 
   useEffect(() => {
+    let mounted = true;
     window.addEventListener("scroll", function () {
       if (window.scrollY < 10) {
-        setIsOnTop(true);
+        if (mounted) {
+          setIsOnTop(true);
+        }
       } else {
-        setIsOnTop(false);
+        if (mounted) {
+          setIsOnTop(false);
+        }
       }
     });
+    return () => {
+      mounted = false;
+      window.removeEventListener("scroll", () => null);
+    };
   });
 
   const boxShadow = isOnTop

@@ -5,9 +5,11 @@ export default function useTranslation<Translation>(
   englishTranslations: Translation
 ) {
   const router = useRouter();
-  const { locale } = router;
-  const defaultLocale = locale ? locale : "en";
-  const isEnglishPage = locale === "en";
+  const {
+    query: { locale },
+  } = router;
+  const defaultLocale = typeof locale === "string" && locale ? locale : "en";
+  const isEnglishPage = locale === "en" || locale === undefined;
   const isSpanishPage = locale === "es";
   const t: Translation = isSpanishPage
     ? spanishTranslations

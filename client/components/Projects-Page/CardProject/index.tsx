@@ -37,7 +37,7 @@ export default function CardProject({
       launch: "Launch project",
     },
   };
-  const { t } = useTranslation(localeEs, localeEn);
+  const { t, defaultLocale } = useTranslation(localeEs, localeEn);
 
   const direction = index % 2 === 0 ? "rtl" : "ltr";
   const textAlign = index % 2 === 0 ? "right" : "left";
@@ -87,7 +87,7 @@ export default function CardProject({
             <Tooltip title={t.tooltips.info}>
               <Link
                 naked
-                href={project.pageURL}
+                href={`/${defaultLocale}${project.pageURL}`}
                 target="__blank"
                 aria-label="info page project"
                 className={classes.link}
@@ -129,7 +129,7 @@ export default function CardProject({
               ? project.launchURL
               : project.githubURL
               ? project.githubURL
-              : project.pageURL
+              : `/${defaultLocale}${project.pageURL}`
           }
           target="__blank"
           className={classes.imageLink}
