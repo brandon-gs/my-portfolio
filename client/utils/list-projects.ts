@@ -56,9 +56,9 @@ export const featuredProjects: ListProject = [
     thumbnail: getThumbnail("almerimur"),
     finished: true,
     descriptionEn:
-      "In this project I built a system that allows managing the jobs of different roles that have a company.",
+      "In this project I built a system that allows managing the jobs carried out by the employees.",
     descriptionEs:
-      "En este proyecto desarrolle un sistema que permite administrar los trabajos de los diferentes roles que tiene una empresa.",
+      "En este proyecto desarrolle un sistema que permite administrar los trabajos realizados por los empleados.",
     githubURL: ``,
     launchURL: ``,
     pageURL: "/projects/job-system",
