@@ -52,13 +52,13 @@ export const featuredProjects: ListProject = [
     skills: ["React", "Redux", "JQuery"].reverse(),
   },
   {
-    title: "job management",
+    title: "almerimur",
     thumbnail: getThumbnail("almerimur"),
     finished: true,
     descriptionEn:
-      "In this project I built a system that allows managing the jobs of mechanics and drivers of a Spanish company.",
+      "In this project I built a system that allows managing the jobs carried out by the employees.",
     descriptionEs:
-      "Una aplicación web para visualizar algoritmos de ordenamiento, puedes ver las diferencias entre los distintos algoritmos.",
+      "En este proyecto desarrolle un sistema que permite administrar los trabajos realizados por los empleados.",
     githubURL: ``,
     launchURL: ``,
     pageURL: "/projects/job-system",
