@@ -18,7 +18,7 @@ export const currentProjects: ListProject = [
     descriptionEs:
       "Esta aplicación web es una red social para lectores y escritores. Puedes ver historias escritas por todos los usuarios, modificar tu perfil, crear historias con sus diferentes capítulos, dejar comentarios, seleccionar tus historias favoritas, seguir usuarios, y ¡Más funciones!",
     githubURL: `${GITHUB_API}/storymash`,
-    launchURL: "https://storymash.herokuapp.com/",
+    launchURL: "",
     pageURL: "",
     skills: ["Typescript", "Next.js", "Express", "mongodb"].reverse(),
   },
