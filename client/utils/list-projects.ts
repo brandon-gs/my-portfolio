@@ -52,6 +52,19 @@ export const featuredProjects: ListProject = [
     skills: ["React", "Redux", "JQuery"].reverse(),
   },
   {
+    title: "Code to image",
+    thumbnail: getThumbnail("code_to_image"),
+    finished: true,
+    descriptionEn:
+      "This is a web application where you can convert your code to an image online. Instead of clicking screenshots of your code you can add your code here and export the window as a png or jpeg. You can customize how the code looks.",
+    descriptionEs:
+      "Este es una aplicación web en la que puedes convertir tu código a una imagen en línea. En lugar de hacer clic en las capturas de pantalla de su código, puede agregar su código aquí y exportar la ventana como png o jpeg. Puede personalizar el aspecto del código.",
+    githubURL: `${GITHUB_API}/code-to-image`,
+    launchURL: `${GITHUB_PAGE}/code-to-image`,
+    pageURL: "",
+    skills: ["React", "Typescript", "SASS", "Tailwindcss"].reverse(),
+  },
+  {
     title: "almerimur",
     thumbnail: getThumbnail("almerimur"),
     finished: true,
