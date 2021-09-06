@@ -231,7 +231,7 @@ function Item({
   return (
     <Paper style={{ height: fw ? 600 : 880, width: 800, margin: "0 auto" }}>
       <Grid container direction="column">
-        <Grid item justify="center">
+        <Grid container item justify="center">
           <Box
             padding={0}
             style={{
