@@ -42,7 +42,7 @@ export default function DesktopMenu(): JSX.Element {
         <Button
           color="inherit"
           component={Link}
-          href={isSpanishPage ? "/files/CV_S.pd" : "/files/CV.pdf"}
+          href={isSpanishPage ? "/files/CV_S.pdf" : "/files/CV.pdf"}
           target="_blank"
         >
           {t.resume}
