@@ -78,6 +78,18 @@ export const featuredProjects: ListProject = [
     skills: ["React", "React Native", "PHP"].reverse(),
   },
   {
+    title: "Atomic Labs",
+    thumbnail: getThumbnail("atomic_labs"),
+    finished: true,
+    descriptionEn: "Conversion from an AdobeXD design to a React application",
+    descriptionEs:
+      "Conversión de un diseño de AdobeXD a una aplicación de React",
+    githubURL: `${GITHUB_API}/atomic-labs`,
+    launchURL: `${GITHUB_PAGE}/atomic-labs`,
+    pageURL: "",
+    skills: ["Next.js", "React"],
+  },
+  {
     title: "distrito pyme",
     thumbnail: getThumbnail("distrito_pyme"),
     finished: true,
