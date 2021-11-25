@@ -1,6 +1,7 @@
 import { Project } from "interfaces";
 import { Typography, Tooltip } from "@material-ui/core";
 import { GitHub, Info, Launch } from "@material-ui/icons";
+import Image from "next/image";
 import clsx from "clsx";
 import useStyles from "./styles";
 import { Link } from "components/Common";
@@ -139,9 +140,10 @@ export default function CardProject({
               aria-hidden="true"
               style={{ width: "100%", paddingBottom: "62.2857%" }}
             />
-            <img
-              src={`${project.thumbnail}`}
-              alt={`Image of project ${project.title}`}
+            <Image
+              layout="fill"
+              src={project.thumbnail}
+              alt={`Thumbnail of project ${project.title}`}
               className={classes.image}
             />
           </div>
