@@ -2,35 +2,32 @@ import * as React from "react";
 // Types
 import { AppProps, AppContext, AppInitialProps } from "next/app";
 // Theme
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "utils/theme";
 // Progress load page
 import NProgress from "nprogress";
 import Router from "next/router";
 // Motion
-import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import createEmotionCache from "utils/createEmotionCache";
 
-export const cache = createCache({ key: "css", prepend: true });
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
 
 // Config nprogress
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-const MyApp: React.FC<AppProps> = (props: AppProps) => {
-  const { Component, pageProps } = props;
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
 
-  React.useEffect(() => {
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles);
-    }
-  }, []);
-
+const MyApp: React.FC<MyAppProps> = (props) => {
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
   return (
-    <CacheProvider value={cache}>
+    <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Component {...pageProps} />
@@ -38,18 +35,5 @@ const MyApp: React.FC<AppProps> = (props: AppProps) => {
     </CacheProvider>
   );
 };
-
-export async function getServerSideProps({
-  Component,
-  ctx,
-}: AppContext): Promise<AppInitialProps> {
-  return {
-    pageProps: {
-      ...(Component.getInitialProps
-        ? await Component.getInitialProps(ctx)
-        : {}),
-    },
-  };
-}
 
 export default MyApp;
