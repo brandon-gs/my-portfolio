@@ -20,7 +20,7 @@ export const currentProjects: ListProject = [
     githubURL: `${GITHUB_API}/storymash`,
     launchURL: "",
     pageURL: "",
-    skills: ["Typescript", "Next.js", "Express", "mongodb"].reverse(),
+    skills: ["React Native", "Next.js", "Express", "MongoDB"].reverse(),
   },
 ];
 
@@ -36,7 +36,7 @@ export const featuredProjects: ListProject = [
     githubURL: `${GITHUB_API}/findmash`,
     launchURL: `${GITHUB_PAGE}/findmash`,
     pageURL: "",
-    skills: ["React", "HTML5", "CSS3"],
+    skills: ["React", "HTML5", "CSS3"].reverse(),
   },
   {
     title: "sortmash",
@@ -49,7 +49,18 @@ export const featuredProjects: ListProject = [
     githubURL: `${GITHUB_API}/sortmash`,
     launchURL: `${GITHUB_PAGE}/sortmash`,
     pageURL: "",
-    skills: ["React", "Redux", "JQuery"].reverse(),
+    skills: ["React", "Redux", "JQuery"],
+  },
+  {
+    title: "Animated mobile ToDo",
+    thumbnail: getThumbnail("animated-todo"),
+    finished: true,
+    descriptionEn: "Smoothly Animated ToDo App build with React Native",
+    descriptionEs: "Aplicación de tareas pendientes creada con React Native",
+    githubURL: `${GITHUB_API}/mobile-animated-todo`,
+    launchURL: ``,
+    pageURL: "",
+    skills: ["Expo", "React Native", "Reanimated"].reverse(),
   },
   {
     title: "Code to image",
@@ -62,7 +73,7 @@ export const featuredProjects: ListProject = [
     githubURL: `${GITHUB_API}/code-to-image`,
     launchURL: `${GITHUB_PAGE}/code-to-image`,
     pageURL: "",
-    skills: ["React", "Typescript", "SASS", "Tailwindcss"].reverse(),
+    skills: ["React", "Typescript", "SASS", "Tailwindcss"],
   },
   {
     title: "almerimur",
@@ -100,6 +111,6 @@ export const featuredProjects: ListProject = [
     githubURL: "",
     launchURL: "https://distritopyme.com/",
     pageURL: "",
-    skills: ["React", "Redux", "Node.js", "Express", "Mongodb"],
+    skills: ["React", "Redux", "Node.js", "Express", "Mongodb"].reverse(),
   },
 ];
