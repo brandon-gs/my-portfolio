@@ -27,3 +27,6 @@ Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&ut
 Has i18n implementation to get a portfolio with multiple languages
 
 A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+
+
+This project is deployed in [brandongs.com](https://brandongs.com):
