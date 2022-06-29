@@ -10,7 +10,7 @@ import { localeEn, localeEs } from "../locale";
 import useStyles from "./styles";
 
 export default function DesktopMenu(): JSX.Element {
-  const { t, defaultLocale, isSpanishPage } = useTranslation(localeEs, localeEn);
+  const { t, defaultLocale } = useTranslation(localeEs, localeEn);
   const classes = useStyles();
   return (
     <>
@@ -39,15 +39,6 @@ export default function DesktopMenu(): JSX.Element {
         >
           {t.contact}
         </Button>
-        {/*<Button
-          color="inherit"
-          component={Link}
-          href={isSpanishPage ? "/files/CV_S.pdf" : "/files/CV.pdf"}
-          target="_blank"
-        >
-          {t.resume}
-        </Button>
-        */}
       </div>
       <MobileMenu />
     </>
