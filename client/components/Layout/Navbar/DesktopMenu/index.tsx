@@ -46,8 +46,8 @@ export default function DesktopMenu(): JSX.Element {
           target="_blank"
         >
           {t.resume}
-        */}
         </Button>
+        */}
       </div>
       <MobileMenu />
     </>
