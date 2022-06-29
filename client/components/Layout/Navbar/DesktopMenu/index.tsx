@@ -39,13 +39,14 @@ export default function DesktopMenu(): JSX.Element {
         >
           {t.contact}
         </Button>
-        <Button
+        {/*<Button
           color="inherit"
           component={Link}
           href={isSpanishPage ? "/files/CV_S.pdf" : "/files/CV.pdf"}
           target="_blank"
         >
           {t.resume}
+        */}
         </Button>
       </div>
       <MobileMenu />
