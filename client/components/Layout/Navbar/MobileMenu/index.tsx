@@ -25,6 +25,7 @@ export default function MobileMenu(): JSX.Element {
       >
         <GitHubIcon />
       </Link>
+      {/*
       <Link
         href="https://www.linkedin.com/in/brandon-garc%C3%ADa-s%C3%A1nchez-991264186/"
         color="inherit"
@@ -33,7 +34,7 @@ export default function MobileMenu(): JSX.Element {
       >
         <LinkedInIcon />
       </Link>
-      {/* <Link
+       <Link
         href="https://www.youtube.com/channel/UC1O0G0cCW6JfDT8WzjesWLg/videos"
         color="inherit"
         target="_blank"
