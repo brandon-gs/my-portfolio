@@ -3,17 +3,16 @@ import {
   FaCss3Alt,
   FaPython,
   FaJava,
-  FaCuttlefish,
   FaNodeJs,
   FaSass,
   FaBootstrap,
   FaReact,
+  FaAngular,
+  FaDocker,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTypescript, SiMaterialUi, SiMongodb } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-import { BiGitBranch } from "react-icons/bi";
-import IconCSharp from "components/Icons/CSharp";
 
 export default [
   {
@@ -40,18 +39,7 @@ export default [
     skill: "java",
     IconComponent: FaJava,
   },
-  {
-    skill: "c",
-    IconComponent: FaCuttlefish,
-  },
-  {
-    skill: "c sharp",
-    IconComponent: IconCSharp,
-  },
-  {
-    skill: "git",
-    IconComponent: BiGitBranch,
-  },
+
   {
     skill: "sass",
     IconComponent: FaSass,
@@ -79,5 +67,13 @@ export default [
   {
     skill: "react",
     IconComponent: FaReact,
+  },
+  {
+    skill: "angular",
+    IconComponent: FaAngular,
+  },
+  {
+    skill: "docker",
+    IconComponent: FaDocker,
   },
 ];

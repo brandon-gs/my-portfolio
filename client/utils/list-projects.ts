@@ -4,8 +4,8 @@ const resources = `/img/projects`;
 const GITHUB_API = `https://github.com/brandon-gs`;
 const GITHUB_PAGE = "https://brandon-gs.github.io";
 
-const getThumbnail = (title: string) => {
-  return `${resources}/${title}/preview.png`;
+const getThumbnail = (title: string, extension = "png") => {
+  return `${resources}/${title}/preview.${extension}`;
 };
 
 export const currentProjects: ListProject = [
@@ -26,21 +26,8 @@ export const currentProjects: ListProject = [
 
 export const featuredProjects: ListProject = [
   {
-    title: "findmash",
-    thumbnail: getThumbnail("findmash"),
-    finished: true,
-    descriptionEn:
-      "A pathfinding web app that allows you to visualize algorithms to find the shortest path. You can create a maze and see how the algorithm solves it.",
-    descriptionEs:
-      "Una aplicación web de búsqueda de rutas que le permite visualizar algunos algoritmos para encontrar la ruta más corta. Puedes crear un laberinto y ver como lo resuelve el algoritmo.",
-    githubURL: `${GITHUB_API}/findmash`,
-    launchURL: `${GITHUB_PAGE}/findmash`,
-    pageURL: "",
-    skills: ["React", "HTML5", "CSS3"].reverse(),
-  },
-  {
     title: "sortmash",
-    thumbnail: getThumbnail("sortmash"),
+    thumbnail: getThumbnail("sortmash", "gif"),
     finished: true,
     descriptionEn:
       "A web app for visualizing sort algorithms, you can see the differences between the different algorithms.",
@@ -49,7 +36,20 @@ export const featuredProjects: ListProject = [
     githubURL: `${GITHUB_API}/sortmash`,
     launchURL: `${GITHUB_PAGE}/sortmash`,
     pageURL: "",
-    skills: ["React", "Redux", "JQuery"],
+    skills: ["React", "Redux", "CSS3"].reverse(),
+  },
+  {
+    title: "findmash",
+    thumbnail: getThumbnail("findmash", "gif"),
+    finished: true,
+    descriptionEn:
+      "A pathfinding web app that allows you to visualize algorithms to find the shortest path. You can create a maze and see how the algorithm solves it.",
+    descriptionEs:
+      "Una aplicación web de búsqueda de rutas que le permite visualizar algunos algoritmos para encontrar la ruta más corta. Puedes crear un laberinto y ver como lo resuelve el algoritmo.",
+    githubURL: `${GITHUB_API}/findmash`,
+    launchURL: `${GITHUB_PAGE}/findmash`,
+    pageURL: "",
+    skills: ["React", "HTML5", "CSS3"],
   },
   {
     title: "Animated mobile ToDo",
