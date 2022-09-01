@@ -19,6 +19,7 @@ export default function MobileMenu(): JSX.Element {
       <LanguageMenu />
       <Link
         href="https://github.com/brandon-gs"
+        aria-label="Github BrandonGS"
         color="inherit"
         target="_blank"
         className={clsx(classes.icon, classes.iconWithOutMargin)}
