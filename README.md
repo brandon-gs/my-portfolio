@@ -25,4 +25,10 @@ This project is deployed in [brandongs.me](https://www.brandongs.me):
 ## TODO
 
 - [ ] Update material-ui version
+- [ ] Update google analytics configuration
+- [ ] Implement i18n complement to use json file instead the useTranslation hook
+- [ ] Configure Cypress for testing
+- [ ] Configure branches protection on Github for main branch
+- [ ] Configure CI/CD with Github Actions
+- [ ] Configure husky and lint-stage
 - [ ] Implement i18n complement to use json file instead the useTranslation hook
