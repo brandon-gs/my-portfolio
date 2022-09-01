@@ -28,13 +28,11 @@ class MyDocument extends Document {
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta name="author" content="BrandonGS" />
+          <link rel="shortcut icon" href={`/favicon.ico`} />
           <link
-            rel="stylesheet"
+            rel="preload"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <link rel="stylesheet" href={`/css/global.css`} />
-          <link rel="stylesheet" href={`/css/nprogress.css`} />
-          <link rel="shortcut icon" href={`/favicon.ico`} />
         </Head>
         <body>
           <Main />

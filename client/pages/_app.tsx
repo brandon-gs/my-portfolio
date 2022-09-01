@@ -8,6 +8,9 @@ import theme from "utils/theme";
 // Progress load page
 import NProgress from "nprogress";
 import Router from "next/router";
+// Import global styles
+import "styles/global.css";
+import "styles/nprogress.css";
 
 // Config nprogress
 Router.events.on("routeChangeStart", () => NProgress.start());
