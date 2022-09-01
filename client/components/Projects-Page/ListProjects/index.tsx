@@ -1,7 +1,6 @@
 import React from "react";
 import { featuredProjects, currentProjects } from "utils/list-projects";
 import CardProject from "../CardProject";
-import LazyLoad from "react-lazy-load";
 import useStyles from "./styles";
 import { Box, Typography } from "@material-ui/core";
 import { useTranslation } from "hooks";
@@ -23,9 +22,7 @@ export default function ListProjects(): React.ReactElement {
         </Typography>
       </Box>
       {currentProjects.map((project, index) => (
-        <LazyLoad key={`project-${index}`}>
-          <CardProject project={project} index={index} />
-        </LazyLoad>
+        <CardProject project={project} index={index} key={`project-${index}`} />
       ))}
       <Box mb={3}>
         <Typography
@@ -38,9 +35,7 @@ export default function ListProjects(): React.ReactElement {
         </Typography>
       </Box>
       {featuredProjects.map((project, index) => (
-        <LazyLoad key={`project-${index}`}>
-          <CardProject project={project} index={index} />
-        </LazyLoad>
+        <CardProject project={project} index={index} key={`project-${index}`} />
       ))}
     </div>
   );

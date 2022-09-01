@@ -6,6 +6,7 @@ import clsx from "clsx";
 import useStyles from "./styles";
 import { Link } from "components/Common";
 import { useTranslation } from "hooks";
+import LazyLoad from "react-lazy-load";
 
 interface Props {
   project: Project;
@@ -140,12 +141,14 @@ export default function CardProject({
               aria-hidden="true"
               style={{ width: "100%", paddingBottom: "62.2857%" }}
             />
-            <Image
-              layout="fill"
-              src={project.thumbnail}
-              alt={`Thumbnail of project ${project.title}`}
-              className={classes.image}
-            />
+            <LazyLoad>
+              <Image
+                layout="fill"
+                src={project.thumbnail}
+                alt={`Thumbnail of project ${project.title}`}
+                className={classes.image}
+              />
+            </LazyLoad>
           </div>
         </Link>
       </div>
