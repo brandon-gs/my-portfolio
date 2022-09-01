@@ -17,8 +17,10 @@ export default makeStyles((theme) => ({
   emailLinkContainer: {
     margin: theme.spacing(2, "auto", 0),
   },
-  emailIcon: {
-    marginRight: theme.spacing(1),
+  platformName: {
+    marginLeft: theme.spacing(1),
+    fontWeight: "bold",
+    fontSize: 16,
   },
   emailLink: {
     position: "relative",
@@ -28,7 +30,6 @@ export default makeStyles((theme) => ({
     minWidth: 210,
     minHeight: 52,
     textDecoration: "none",
-    fontWeight: "bold",
     cursor: "pointer",
     color: theme.palette.primary.dark,
     borderRadius: 5,

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useRouter } from "next/router";
 
 export default function useTranslation<Translation>(
@@ -5,15 +6,17 @@ export default function useTranslation<Translation>(
   englishTranslations: Translation
 ) {
   const router = useRouter();
-  const {
-    query: { locale },
-  } = router;
-  const defaultLocale = typeof locale === "string" && locale ? locale : "en";
-  const isEnglishPage = locale === "en" || locale === undefined;
-  const isSpanishPage = locale === "es";
+  const { locale, defaultLocale } = router;
+
+  const currentLocale = useMemo(() => locale ?? defaultLocale, [locale]);
+  const isEnglishPage = useMemo(
+    () => locale === "en" || locale === undefined,
+    [locale]
+  );
+  const isSpanishPage = useMemo(() => locale === "es", [locale]);
   const t: Translation = isSpanishPage
     ? spanishTranslations
     : englishTranslations;
 
-  return { router, defaultLocale, isEnglishPage, isSpanishPage, t };
+  return { router, locale: currentLocale, isEnglishPage, isSpanishPage, t };
 }

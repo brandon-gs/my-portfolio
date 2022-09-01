@@ -5,7 +5,7 @@ import { useTranslation } from "hooks";
 import useStyles from "./styles";
 import listSkills from "./helpers/listSkills";
 
-export default function ListSkills(): React.ReactElement {
+const ListSkills: React.FC = () => {
   const classes = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
 
@@ -17,7 +17,7 @@ export default function ListSkills(): React.ReactElement {
         </Typography>
       </Grid>
       <Grid item>
-        <Grid container justify="center">
+        <Grid container justifyContent="center">
           {listSkills.map(({ IconComponent, skill }, index) => {
             return (
               <Grid item key={`list-${skill}-${index}`}>
@@ -36,4 +36,6 @@ export default function ListSkills(): React.ReactElement {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default ListSkills;

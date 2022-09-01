@@ -1,4 +1,5 @@
 // Componentes
+import Image from "next/image";
 import { Container, Grid, Typography } from "@material-ui/core";
 import { MailOutline } from "@material-ui/icons";
 // SVG
@@ -10,8 +11,8 @@ import useStyles from "./styles";
 import { localeEn, localeEs } from "./locale";
 import { useTranslation } from "hooks";
 
-const WORKANA_PROFILE =
-  "https://www.workana.com/freelancer/60d428f6d3701a152e234e0b1b64f406";
+// const WORKANA_PROFILE =
+// "https://www.workana.com/freelancer/60d428f6d3701a152e234e0b1b64f406";
 
 const FIVERR_GIG =
   "https://www.fiverr.com/brandongs180/create-your-react-js-application-with-next-js-and-mongodb";
@@ -22,7 +23,12 @@ export default function FormContact(): React.ReactElement {
 
   return (
     <Container maxWidth="sm" className={classes.root}>
-      <Grid container direction="column" justify="center" alignItems="center">
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Grid item>
           <Typography component="h1" variant="h3" className={classes.title}>
             {t.title}
@@ -35,11 +41,13 @@ export default function FormContact(): React.ReactElement {
         </Grid>
         <Grid item className={classes.emailLinkContainer}>
           <a href="mailto:brandongs180@gmail.com" className={classes.emailLink}>
-            <MailOutline className={classes.emailIcon} />
-            {t.email}
+            <MailOutline />
+            <Typography component="span" className={classes.platformName}>
+              {t.email}
+            </Typography>
           </a>
         </Grid>
-        <Grid item className={classes.emailLinkContainer}>
+        {/* <Grid item className={classes.emailLinkContainer}>
           <a
             href={WORKANA_PROFILE}
             target="__blank"
@@ -62,14 +70,10 @@ export default function FormContact(): React.ReactElement {
             </div>
             {t.workana}
           </a>
-        </Grid>
+        </Grid> */}
         <Grid item className={classes.emailLinkContainer}>
           <a href={FIVERR_GIG} target="__blank" className={classes.emailLink}>
-            <img
-              src="/svg/fiverr.svg"
-              className={classes.emailIcon}
-              style={{ height: 18, width: 24 }}
-            />
+            <Image src="/svg/fiverr.svg" height={18} width={24} />
             {/* <Fiverr
               className={classes.emailIcon}
               style={{
@@ -77,7 +81,9 @@ export default function FormContact(): React.ReactElement {
                 height: 18,
               }}
             /> */}
-            {t.fiverr}
+            <Typography component="span" className={classes.platformName}>
+              {t.fiverr}
+            </Typography>
           </a>
         </Grid>
       </Grid>

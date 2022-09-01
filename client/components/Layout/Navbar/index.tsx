@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // Components
+import Image from "next/image";
 import {
   AppBar,
   Slide,
@@ -68,7 +69,12 @@ export default function Navbar(): React.ReactElement {
               variant="h6"
               className={classes.logo}
             >
-              <img src={`/img/logo_sm.png`} alt="Logo de Brandon" />
+              <Image
+                src={`/img/logo_sm.png`}
+                width={40}
+                height={40}
+                alt="Logo de Brandon"
+              />
             </Typography>
             <div className={classes.grow} />
             <DesktopMenu />

@@ -12,10 +12,12 @@ export default function ProjectsPage(): JSX.Element {
   };
   const { t } = useTranslation(localeEs, localeEn);
 
+  const title = `Brandon García | ${t.projects}`;
+
   return (
     <Fragment>
       <Head>
-        <title>Brandon García | {t.projects}</title>
+        <title>{title}</title>
         <meta
           name="keywords"
           content="brandon, brandon garcia, brandongs, frontend developer, backend developer, freelance, software engineering, software engineering projects, create web apps, create mobile apps, create software"

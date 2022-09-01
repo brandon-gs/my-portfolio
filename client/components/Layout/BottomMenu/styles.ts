@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
       width: "100%",
       bottom: 0,
     },
+    zIndex: 10000000,
   },
   item: {
     color: theme.palette.grey[500],

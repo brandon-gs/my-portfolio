@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from "react";
 import Head from "next/head";
 import { Navbar, BottomMenu } from "components";
@@ -129,7 +130,7 @@ const IndexPage = (): JSX.Element => {
       </Head>
       <Navbar />
       <Container maxWidth="md">
-        <Grid container justify="center" direction="column">
+        <Grid container justifyContent="center" direction="column">
           <Grid item>
             <Box mt={3}>
               <Typography
@@ -231,7 +232,7 @@ function Item({
   return (
     <Paper style={{ height: fw ? 600 : 880, width: 800, margin: "0 auto" }}>
       <Grid container direction="column">
-        <Grid container item justify="center">
+        <Grid container item justifyContent="center">
           <Box
             padding={0}
             style={{

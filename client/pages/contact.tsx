@@ -11,10 +11,11 @@ export default function Contact(): JSX.Element {
     contact: "Get in touch",
   };
   const { t } = useTranslation(localeEs, localeEn);
+  const title = `Brandon García | ${t.contact}`;
   return (
     <Fragment>
       <Head>
-        <title>Brandon García | {t.contact} </title>
+        <title>{title}</title>
         <meta
           name="keywords"
           content="brandon, brandon garcia, brandongs, frontend developer, backend developer, freelance, software engineering, software engineering projects, create web apps, create mobile apps, create software"

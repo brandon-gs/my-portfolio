@@ -11,7 +11,7 @@ import {
   FaDocker,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiTypescript, SiMaterialUi, SiMongodb } from "react-icons/si";
+import { SiTypescript, SiMongodb, SiMaterialui } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 
 export default [
@@ -50,7 +50,7 @@ export default [
   },
   {
     skill: "material-ui",
-    IconComponent: SiMaterialUi,
+    IconComponent: SiMaterialui,
   },
   {
     skill: "mysql",

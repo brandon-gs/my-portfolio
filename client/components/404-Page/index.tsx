@@ -1,6 +1,7 @@
 import React from "react";
 import { localeEs, localeEn } from "./locale";
 // Components
+import Image from "next/image";
 import { Container, Grid, Typography } from "@material-ui/core";
 import Typewriter from "typewriter-effect";
 import { Link } from "components";
@@ -14,10 +15,20 @@ function NotFoundMessage() {
   return (
     <main className={classes.root}>
       <Container maxWidth="lg">
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Grid item>
             <Link href="/">
-              <img src={`/img/logo_sm.png`} />
+              <Image
+                src={`/img/logo_sm.png`}
+                width={200}
+                height={200}
+                alt="Logo BrandonGS"
+              />
             </Link>
           </Grid>
           <Grid item>

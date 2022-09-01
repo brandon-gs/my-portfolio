@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Link } from "components";
 import {
   GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
+  // LinkedIn as LinkedInIcon,
   // YouTube as YouTubeIcon,
 } from "@material-ui/icons";
 import LanguageMenu from "../LangMenu";

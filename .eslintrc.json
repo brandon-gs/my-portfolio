@@ -1,13 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-    //"prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended"
     //"prettier/@typescript-eslint"
   ],
   "env": {
@@ -15,6 +13,11 @@
     "browser": true,
     "jest": true,
     "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
   "rules": {
     "react/react-in-jsx-scope": 0,
@@ -36,10 +39,7 @@
     "no-console": [
       2,
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ]
   }

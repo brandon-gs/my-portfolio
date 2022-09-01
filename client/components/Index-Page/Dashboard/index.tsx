@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { localeEs, localeEn } from "./locale";
 // Components
+import Image from "next/image";
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 import {
   Work as WorkIcon,
@@ -19,9 +20,19 @@ export default function Dashboard(): React.ReactElement {
   return (
     <main className={classes.root}>
       <Container maxWidth="lg">
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Grid item>
-            <img src={`/img/logo_sm.png`} />
+            <Image
+              src={`/img/logo_sm.png`}
+              width={200}
+              height={200}
+              alt="Logo BrandonGS"
+            />
           </Grid>
           <Grid item>
             <Typography
@@ -59,7 +70,7 @@ export default function Dashboard(): React.ReactElement {
             <Grid
               container
               spacing={2}
-              justify="center"
+              justifyContent="center"
               alignItems="center"
               className={classes.buttonsContainer}
             >

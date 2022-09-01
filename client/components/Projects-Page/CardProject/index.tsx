@@ -38,7 +38,7 @@ export default function CardProject({
       launch: "Launch project",
     },
   };
-  const { t, defaultLocale } = useTranslation(localeEs, localeEn);
+  const { t } = useTranslation(localeEs, localeEn);
 
   const direction = index % 2 === 0 ? "rtl" : "ltr";
   const textAlign = index % 2 === 0 ? "right" : "left";
@@ -88,7 +88,7 @@ export default function CardProject({
             <Tooltip title={t.tooltips.info}>
               <Link
                 naked
-                href={`/${defaultLocale}${project.pageURL}`}
+                href={`/${project.pageURL}`}
                 target="__blank"
                 aria-label="info page project"
                 className={classes.link}
@@ -99,38 +99,38 @@ export default function CardProject({
           )}
           {project.githubURL && (
             <Tooltip title={t.tooltips.github}>
-              <a
+              <Link
                 href={project.githubURL}
                 target="__blank"
                 aria-label="github project"
                 className={classes.link}
               >
                 <GitHub />
-              </a>
+              </Link>
             </Tooltip>
           )}
           {project.launchURL && (
             <Tooltip title={t.tooltips.launch}>
-              <a
+              <Link
                 href={project.launchURL}
                 target="__blank"
                 aria-label="launch project"
                 className={classes.link}
               >
                 <Launch />
-              </a>
+              </Link>
             </Tooltip>
           )}
         </div>
       </div>
       <div className={classes.imageContainer}>
-        <a
+        <Link
           href={
             project.launchURL
               ? project.launchURL
               : project.githubURL
               ? project.githubURL
-              : `/${defaultLocale}${project.pageURL}`
+              : `/${project.pageURL}`
           }
           target="__blank"
           className={classes.imageLink}
@@ -147,7 +147,7 @@ export default function CardProject({
               className={classes.image}
             />
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

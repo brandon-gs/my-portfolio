@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, Fragment } from "react";
 // Components
+import Image from "next/image";
 import {
   Button,
   Grow,
@@ -7,6 +8,7 @@ import {
   MenuList,
   Paper,
   Popper,
+  Typography,
 } from "@material-ui/core";
 import {
   Translate as TranslateIcon,
@@ -35,7 +37,7 @@ export default function LanguageMenu() {
   };
 
   const handleClose =
-    (locale: string) => async (event: React.MouseEvent<EventTarget>) => {
+    (nextLocale: string) => async (event: React.MouseEvent<EventTarget>) => {
       const existsAnchorRef =
         anchorRef.current &&
         anchorRef.current.contains(event.target as HTMLElement);
@@ -44,12 +46,13 @@ export default function LanguageMenu() {
       }
       setOpen(false);
       // Replace route
-      router.push({
-        pathname: router.route,
-        query: {
-          locale,
+      router.push(
+        {
+          pathname: router.route,
         },
-      });
+        router.asPath,
+        { locale: nextLocale }
+      );
     };
 
   const handleListKeyDown = (event: React.KeyboardEvent) => {
@@ -112,23 +115,29 @@ export default function LanguageMenu() {
                     isSpanishPage ? classes.flagActive : classes.flagContainer
                   }
                 >
-                  <img
-                    alt="Spanish flag"
-                    src="/img/flags/spain.png"
-                    className={classes.flagImage}
+                  <Image
+                    src={"/img/flags/spain.png"}
+                    alt="Spain Flag"
+                    width={40}
+                    height={40}
                   />
-                  {t.spanish}
+                  <Typography className={classes.flag} component="span">
+                    {t.spanish}
+                  </Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={handleClose("en")}
                   className={isEnglishPage ? classes.flagActive : undefined}
                 >
-                  <img
-                    alt="United Kingdom flag"
-                    src="/img/flags/united-kingdom.png"
-                    className={classes.flagImage}
+                  <Image
+                    src={"/img/flags/united-kingdom.png"}
+                    alt="United Kingdom Flag"
+                    width={40}
+                    height={40}
                   />
-                  {t.english}
+                  <Typography className={classes.flag} component="span">
+                    {t.english}
+                  </Typography>
                 </MenuItem>
               </MenuList>
             </Paper>

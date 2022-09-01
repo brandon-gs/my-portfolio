@@ -85,7 +85,7 @@ export const featuredProjects: ListProject = [
       "En este proyecto desarrolle un sistema que permite administrar los trabajos realizados por los empleados.",
     githubURL: ``,
     launchURL: ``,
-    pageURL: "/projects/job-system",
+    pageURL: "projects/job-system",
     skills: ["React", "React Native", "PHP"].reverse(),
   },
   {

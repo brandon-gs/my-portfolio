@@ -6,7 +6,7 @@ import Info from "./Info";
 // Hooks
 import useStyles from "./styles";
 
-export default function About(): React.ReactElement {
+const About: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -21,4 +21,6 @@ export default function About(): React.ReactElement {
       </Grid>
     </Container>
   );
-}
+};
+
+export default About;

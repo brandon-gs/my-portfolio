@@ -4,10 +4,8 @@ export default makeStyles((theme) => ({
   menuList: {
     padding: 0,
   },
-  flagImage: {
-    width: 40,
-    height: 40,
-    margin: theme.spacing(0, 1, 0, 0),
+  flag: {
+    margin: theme.spacing(0, 0, 0, 1),
   },
   flagContainer: {
     "&:hover": {
