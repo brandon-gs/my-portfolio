@@ -49,7 +49,7 @@ export default [
     IconComponent: FaBootstrap,
   },
   {
-    skill: "material-ui",
+    skill: "mui",
     IconComponent: SiMaterialui,
   },
   {

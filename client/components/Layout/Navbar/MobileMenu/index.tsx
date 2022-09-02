@@ -6,13 +6,13 @@ import {
   GitHub as GitHubIcon,
   // LinkedIn as LinkedInIcon,
   // YouTube as YouTubeIcon,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import LanguageMenu from "../LangMenu";
 // Hooks
 import useStyles from "./styles";
 
 export default function MobileMenu(): JSX.Element {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>

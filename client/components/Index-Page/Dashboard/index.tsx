@@ -3,11 +3,11 @@ import clsx from "clsx";
 import { localeEs, localeEn } from "./locale";
 // Components
 import Image from "next/image";
-import { Button, Container, Grid, Typography } from "@material-ui/core";
+import { Button, Container, Grid, Typography } from "@mui/material";
 import {
   Work as WorkIcon,
   ContactMail as ContactMailIcon,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import Typewriter from "typewriter-effect";
 import { Link } from "components";
 // Hooks
@@ -15,7 +15,7 @@ import useStyles from "./styles";
 import { useTranslation } from "hooks";
 
 export default function Dashboard(): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
   return (
     <main className={classes.root}>

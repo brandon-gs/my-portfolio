@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "tss-react/mui";
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
   root: {
     margin: theme.spacing(2, "auto"),
   },

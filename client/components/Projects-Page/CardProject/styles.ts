@@ -1,9 +1,9 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "tss-react/mui";
 
 const transition =
   "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s";
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
   container: {
     display: "grid",
     gap: 10,

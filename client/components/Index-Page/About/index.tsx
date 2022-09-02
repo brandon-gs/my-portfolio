@@ -1,23 +1,23 @@
 import React from "react";
 // Components
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@mui/material";
 import ListSkills from "./ListSkills";
 import Info from "./Info";
 // Hooks
 import useStyles from "./styles";
 
 const About: React.FC = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Container maxWidth={"lg"} className={classes.root}>
-      <Grid container direction={"row"}>
-        <Container maxWidth={"sm"}>
+      <Grid container spacing={1} justifyContent="center">
+        <Grid item xs={10} sm={10} md={6}>
           <Info />
-        </Container>
-        <Container maxWidth={"sm"}>
+        </Grid>
+        <Grid item xs={10} sm={10} md={6}>
           <ListSkills />
-        </Container>
+        </Grid>
       </Grid>
     </Container>
   );

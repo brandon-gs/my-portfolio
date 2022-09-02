@@ -20,7 +20,7 @@ export const currentProjects: ListProject = [
     githubURL: `${GITHUB_API}/storymash`,
     launchURL: "",
     pageURL: "",
-    skills: ["React Native", "Next.js", "Express", "MongoDB"].reverse(),
+    skills: ["React Native", "Next", "Express", "Mongo"].reverse(),
   },
 ];
 

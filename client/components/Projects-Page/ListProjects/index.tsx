@@ -2,12 +2,12 @@ import React from "react";
 import { featuredProjects, currentProjects } from "utils/list-projects";
 import CardProject from "../CardProject";
 import useStyles from "./styles";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography } from "@mui/material";
 import { useTranslation } from "hooks";
 import { localeEn, localeEs } from "./locale";
 
 export default function ListProjects(): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
   return (
     <div className={classes.container}>

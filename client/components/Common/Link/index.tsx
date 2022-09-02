@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 // Components
 import NextLink from "next/link";
-import MuiLink from "@material-ui/core/Link";
+import MuiLink from "@mui/material/Link";
 // Helpers
 import clsx from "clsx";
 import { UrlObject } from "url";

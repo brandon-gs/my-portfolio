@@ -9,11 +9,11 @@ import {
   Paper,
   Popper,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import {
   Translate as TranslateIcon,
   ArrowDropDown as ArrowDropDownIcon,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 // Hooks
 import useStyles from "./styles";
 
@@ -22,7 +22,7 @@ import { localeEs, localeEn } from "./locale";
 import { useTranslation } from "hooks";
 
 export default function LanguageMenu() {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t, router, isSpanishPage, isEnglishPage } = useTranslation(
     localeEs,
     localeEn

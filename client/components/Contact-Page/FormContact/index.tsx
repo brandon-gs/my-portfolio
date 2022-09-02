@@ -1,7 +1,7 @@
 // Componentes
 import Image from "next/image";
-import { Container, Grid, Typography } from "@material-ui/core";
-import { MailOutline } from "@material-ui/icons";
+import { Container, Grid, Typography } from "@mui/material";
+import { MailOutline } from "@mui/icons-material";
 // SVG
 // import Fiverr from "./fiverr.svg";
 // import Workana from "./workana.svg";
@@ -18,7 +18,7 @@ const FIVERR_GIG =
   "https://www.fiverr.com/brandongs180/create-your-react-js-application-with-next-js-and-mongodb";
 
 export default function FormContact(): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
 
   return (

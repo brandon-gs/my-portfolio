@@ -1,6 +1,6 @@
 import { Project } from "interfaces";
-import { Typography, Tooltip } from "@material-ui/core";
-import { GitHub, Info, Launch } from "@material-ui/icons";
+import { Typography, Tooltip } from "@mui/material";
+import { GitHub, Info, Launch } from "@mui/icons-material";
 import Image from "next/image";
 import clsx from "clsx";
 import useStyles from "./styles";
@@ -17,7 +17,7 @@ export default function CardProject({
   project,
   index,
 }: Props): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const localeEs = {
     progress: "Proyecto en progreso",

@@ -4,9 +4,9 @@ import {
   Home as HomeIcon,
   ContactMail as ContactMailIcon,
   Work as WorkIcon,
-} from "@material-ui/icons";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+} from "@mui/icons-material";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 // Hooks
 import { useTranslation } from "hooks/";
 import { localeEs, localeEn } from "./locale";
@@ -21,7 +21,7 @@ const getValue = (router: NextRouter) => {
 };
 
 export default function BottomMenu() {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const router = useRouter();
   const { t } = useTranslation(localeEs, localeEn);
   const [value] = useState(getValue(router));

@@ -2,7 +2,7 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 import { Navbar, BottomMenu } from "components";
-import { Box, Container, Grid, Paper, Typography } from "@material-ui/core";
+import { Box, Container, Grid, Paper, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import { useTranslation } from "hooks";
 

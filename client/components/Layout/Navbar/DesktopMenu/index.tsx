@@ -1,20 +1,19 @@
 import React from "react";
 // Components
-import { Button } from "@material-ui/core";
+import { Button, Box } from "@mui/material";
 import { Link } from "components/";
 import MobileMenu from "../MobileMenu";
 // Translation
 import { useTranslation } from "hooks";
 import { localeEn, localeEs } from "../locale";
 // Hooks
-import useStyles from "./styles";
+// import useStyles from "./styles";
 
 export default function DesktopMenu(): JSX.Element {
   const { t } = useTranslation(localeEs, localeEn);
-  const classes = useStyles();
   return (
     <>
-      <div className={classes.sectionDesktop}>
+      <Box display={{ xs: "none", sm: "flex" }}>
         <Button color="inherit" component={Link} href={`/`} naked>
           {t.home}
         </Button>
@@ -24,7 +23,7 @@ export default function DesktopMenu(): JSX.Element {
         <Button color="inherit" component={Link} href={`/contact`} naked>
           {t.contact}
         </Button>
-      </div>
+      </Box>
       <MobileMenu />
     </>
   );
