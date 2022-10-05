@@ -14,8 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/core": "4.12.4",
-    "@material-ui/icons": "4.11.3",
+    "@emotion/cache": "^11.10.3",
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.3",
+    "@mui/styles": "^5.10.3",
+    "autoprefixer": "^10.4.8",
+    "clean-css": "^5.3.1",
     "next": "12.2.5",
     "nprogress": "0.2.0",
     "react": "18.2.0",
@@ -23,8 +30,9 @@
     "react-i18next": "11.18.5",
     "react-icons": "4.4.0",
     "react-lazy-load": "4.0.0",
-    "react-material-ui-carousel": "2.3.11",
+    "react-material-ui-carousel": "3.4.2",
     "sharp": "^0.30.7",
+    "tss-react": "^4.0.0",
     "typewriter-effect": "2.19.0"
   },
   "devDependencies": {

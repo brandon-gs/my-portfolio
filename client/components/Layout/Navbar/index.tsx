@@ -7,7 +7,7 @@ import {
   Toolbar,
   Typography,
   useScrollTrigger,
-} from "@material-ui/core";
+} from "@mui/material";
 import { Link } from "components";
 import DesktopMenu from "./DesktopMenu";
 // Hooks
@@ -30,21 +30,17 @@ function HideOnScroll(props: Props) {
 }
 
 export default function Navbar(): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const [isOnTop, setIsOnTop] = useState<boolean>(true);
 
   useEffect(() => {
     let mounted = true;
     window.addEventListener("scroll", function () {
-      if (window.scrollY < 10) {
-        if (mounted) {
-          setIsOnTop(true);
-        }
-      } else {
-        if (mounted) {
-          setIsOnTop(false);
-        }
+      if (window.scrollY < 10 && mounted) {
+        setIsOnTop(true);
+      } else if (mounted) {
+        setIsOnTop(false);
       }
     });
     return () => {

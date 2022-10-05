@@ -1,11 +1,11 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 import { localeEs, localeEn } from "./locale";
 import useStyles from "./styles";
 import { useTranslation } from "hooks";
 
 export default function Info(): React.ReactElement {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const { t } = useTranslation(localeEs, localeEn);
 

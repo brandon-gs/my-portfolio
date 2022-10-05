@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "tss-react/mui";
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
     textTransform: "uppercase",
     letterSpacing: 8,
     [theme.breakpoints.only("sm")]: {
-      fontSize: "3.5em",
+      fontSize: "3em",
     },
     [theme.breakpoints.only("xs")]: {
       letterSpacing: 5,

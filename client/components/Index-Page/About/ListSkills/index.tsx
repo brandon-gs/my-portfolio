@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@mui/material";
 import { localeEn, localeEs } from "./locale";
 import { useTranslation } from "hooks";
 import useStyles from "./styles";
 import listSkills from "./helpers/listSkills";
 
 const ListSkills: React.FC = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
 
   return (
@@ -26,6 +26,7 @@ const ListSkills: React.FC = () => {
                   color="secondary"
                   startIcon={<IconComponent />}
                   className={classes.listItemButton}
+                  disabled
                 >
                   {skill}
                 </Button>

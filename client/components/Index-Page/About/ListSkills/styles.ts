@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "tss-react/mui";
 
-export default makeStyles((theme) => ({
+export default makeStyles()((theme) => ({
   listContainer: {
     display: "flex",
     flexGrow: 1,
@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
     justifyContent: "flex-start",
     margin: theme.spacing(1),
     fontSize: "1em",
+    color: `${theme.palette.primary.main} !important`,
     cursor: "default",
     "&:hover": {
       backgroundColor: theme.palette.secondary.main,

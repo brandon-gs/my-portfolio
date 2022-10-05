@@ -20,7 +20,7 @@ export const currentProjects: ListProject = [
     githubURL: `${GITHUB_API}/storymash`,
     launchURL: "",
     pageURL: "",
-    skills: ["React Native", "Next.js", "Express", "MongoDB"].reverse(),
+    skills: ["React Native", "Next", "Express", "Mongo"].reverse(),
   },
 ];
 
@@ -50,6 +50,19 @@ export const featuredProjects: ListProject = [
     launchURL: `${GITHUB_PAGE}/findmash`,
     pageURL: "",
     skills: ["React", "HTML5", "CSS3"],
+  },
+  {
+    title: "pokeapi",
+    thumbnail: getThumbnail("pokeapi", "gif"),
+    finished: true,
+    descriptionEn:
+      "Project created with MERN Stack, Sockets and using the pokeapi",
+    descriptionEs:
+      "Proyecto creado con el stack MERN, Sockets y usando la pokeapi",
+    githubURL: `${GITHUB_API}/pokeapi-client`,
+    launchURL: `${GITHUB_PAGE}/pokeapi-client`,
+    pageURL: "",
+    skills: ["MongoDB", "Express", "Sockets", "React"],
   },
   {
     title: "Animated mobile ToDo",

@@ -2,7 +2,7 @@ import React from "react";
 import { localeEs, localeEn } from "./locale";
 // Components
 import Image from "next/image";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography } from "@mui/material";
 import Typewriter from "typewriter-effect";
 import { Link } from "components";
 // Hooks
@@ -10,7 +10,7 @@ import useStyles from "./styles";
 import { useTranslation } from "hooks";
 
 function NotFoundMessage() {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const { t } = useTranslation(localeEs, localeEn);
   return (
     <main className={classes.root}>
