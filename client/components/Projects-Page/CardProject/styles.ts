@@ -141,7 +141,6 @@ export default makeStyles()((theme) => ({
   imageLink: {
     display: "inline-block",
     width: "100%",
-    backgroundColor: "#4b6584",
     position: "relative",
     borderRadius: 5,
     verticalAlign: "middle",
@@ -180,13 +179,13 @@ export default makeStyles()((theme) => ({
           },
         },
       },
+      backgroundColor: "#4b6584",
     },
   },
   imageWrapper: {
     position: "relative",
     overflow: "hidden",
     mixBlendMode: "multiply",
-    filter: "grayscale(100%) contrast(1) brightness(90%)",
     width: "100%",
     maxWidth: "100%",
     height: "inherit",
@@ -194,9 +193,6 @@ export default makeStyles()((theme) => ({
     "&:hover": {
       background: "transparent none repeat scroll 0% 0%",
       filter: "none",
-    },
-    [theme.breakpoints.down("md")]: {
-      filter: "grayscale(100%) contrast(1) brightness(80%)",
     },
   },
   image: {
@@ -210,10 +206,6 @@ export default makeStyles()((theme) => ({
     transitionDelay: "500ms",
     maxWidth: "100%",
     transition,
-    "&::selection": {
-      backgroundColor: "blue",
-      color: "red",
-    },
     [theme.breakpoints.down("md")]: {
       filter: "brightness(35%)",
     },
