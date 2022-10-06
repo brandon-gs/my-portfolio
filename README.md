@@ -31,4 +31,4 @@ This project is deployed in [brandongs.me](https://www.brandongs.me):
 - [ ] Configure branches protection on Github for main branch
 - [ ] Configure CI/CD with Github Actions
 - [ ] Configure husky and lint-stage
-- [ ] Implement i18n complement to use json file instead the useTranslation hook
+
