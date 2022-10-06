@@ -56,9 +56,9 @@ export const featuredProjects: ListProject = [
     thumbnail: getThumbnail("pokeapi", "gif"),
     finished: true,
     descriptionEn:
-      "Project created with MERN Stack, Sockets and using the pokeapi",
+      "Project created with MERN Stack, using the pokeapi and sockets to sync the data among all the connected clients",
     descriptionEs:
-      "Proyecto creado con el stack MERN, Sockets y usando la pokeapi",
+      "Proyecto creado con el stack MERN, usando la pokeapi y sockets para sincronizar los datos entre todos los clientes conectados",
     githubURL: `${GITHUB_API}/pokeapi-client`,
     launchURL: `${GITHUB_PAGE}/pokeapi-client`,
     pageURL: "",
