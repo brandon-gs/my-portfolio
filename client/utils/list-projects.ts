@@ -52,6 +52,19 @@ export const featuredProjects: ListProject = [
     skills: ["React", "HTML5", "CSS3"],
   },
   {
+    title: "Monopolio",
+    thumbnail: getThumbnail("monopolio", "png"),
+    finished: true,
+    descriptionEn:
+      "Monopolio is an online platform that provides a marketplace for buying and selling real estate properties in Mexico. The platform connects buyers and sellers using artificial intelligence to help users make decisions about purchasing or selling properties.",
+    descriptionEs:
+      "Monopolio es una plataforma en línea que provee un mercado para comprar y vender inmuebles en México. La plataforma conecta a compradores y vendedores usando inteligencia artificial para ayudar a los usuarios a tomar decisiones en la compra o venta de inmuebles.",
+    githubURL: "",
+    launchURL: `https://monopolio.com.mx/`,
+    pageURL: "",
+    skills: ["AWS", "Next", "React"],
+  },
+  {
     title: "pokeapi",
     thumbnail: getThumbnail("pokeapi", "gif"),
     finished: true,
