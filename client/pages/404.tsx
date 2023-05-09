@@ -4,6 +4,7 @@ import { BottomMenu, Navbar } from "components";
 import NotFoundMessage from "components/404-Page";
 // Hooks
 import { useTranslation } from "hooks";
+import GithubIcon from "components/Common/Social/GithubIcon";
 
 const localeEs = {
   notFound: "Page not found",
@@ -25,6 +26,7 @@ const NotFoundPage = () => {
       <Navbar />
       <NotFoundMessage />
       <BottomMenu />
+      <GithubIcon></GithubIcon>
     </Fragment>
   );
 };

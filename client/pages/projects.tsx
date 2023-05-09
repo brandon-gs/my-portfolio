@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { BottomMenu, ListProjects, Navbar } from "components";
 import { useTranslation } from "hooks";
+import GithubIcon from "components/Common/Social/GithubIcon";
 
 export default function ProjectsPage(): JSX.Element {
   const localeEs = {
@@ -30,6 +31,7 @@ export default function ProjectsPage(): JSX.Element {
       <Navbar />
       <ListProjects />
       <BottomMenu />
+      <GithubIcon></GithubIcon>
     </Fragment>
   );
 }

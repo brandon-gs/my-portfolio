@@ -26,6 +26,59 @@ export const currentProjects: ListProject = [
 
 export const featuredProjects: ListProject = [
   {
+    title: "Kaax",
+    thumbnail: getThumbnail("kaax", "png"),
+    finished: true,
+    descriptionEn:
+      "This is an online currency exchange platform that allows users to buy and sell different currencies from around the world. Users can conduct real-time transactions with constantly updated exchange rates. Additionally, the platform features market analysis tools that provide useful information for investment decision-making.",
+    descriptionEs:
+      "Se trata de una plataforma de intercambio de divisas en línea que permite a los usuarios comprar y vender distintas monedas del mundo. Los usuarios pueden realizar transacciones en tiempo real con tipos de cambio actualizados constantemente. Además, la plataforma cuenta con herramientas de análisis de mercado que proporcionan información útil para la toma de decisiones de inversión.",
+    githubURL: ``,
+    launchURL: `https://www.gokaax.com/`,
+    pageURL: "",
+    skills: ["React", "AWS", "Material UI"].reverse(),
+  },
+  {
+    title: "Compa Financial",
+    thumbnail: getThumbnail("compa", "png"),
+    finished: true,
+    descriptionEn:
+      "Compa is a crowdfunding platform that offers mortgage loans to Mexican residents, connecting investors with loan applicants through a network of mortgage correspondents. The platform allows investors to review and select projects in which they wish to invest, and the loans are backed by a mortgage guarantee.",
+    descriptionEs:
+      "Compa es una plataforma de financiamiento colectivo que ofrece préstamos hipotecarios a residentes mexicanos, conectando a inversionistas con solicitantes de préstamos a través de una red de corresponsales hipotecarios. La plataforma permite a los inversionistas revisar y seleccionar proyectos en los que desean invertir, y los préstamos están respaldados por una garantía hipotecaria.",
+    githubURL: ``,
+    launchURL: `https://compa.financial/`,
+    pageURL: "",
+    skills: ["React", "Next", "AWS", "Tailwind"].reverse(),
+  },
+  {
+    title: "Monopolio",
+    thumbnail: getThumbnail("monopolio", "gif"),
+    finished: true,
+    descriptionEn:
+      "Monopolio is an online platform that provides a marketplace for buying and selling real estate properties in Mexico. The platform connects buyers and sellers using artificial intelligence to help users make decisions about purchasing or selling properties.",
+    descriptionEs:
+      "Monopolio es una plataforma en línea que provee un mercado para comprar y vender inmuebles en México. La plataforma conecta a compradores y vendedores usando inteligencia artificial para ayudar a los usuarios a tomar decisiones en la compra o venta de inmuebles.",
+    githubURL: "",
+    launchURL: `https://monopolio.com.mx/`,
+    pageURL: "",
+    skills: ["React", "Next", "AWS", "Tailwind"],
+  },
+  {
+    title: "distrito pyme",
+    thumbnail: getThumbnail("distrito_pyme"),
+    finished: true,
+    descriptionEn:
+      "I collaborated in the creation fo this project, this project is a digital platform that seeks to turn financing into a simple process and without bureaucratic procedures.",
+    descriptionEs:
+      "Colaboré en la creación de este proyecto, este proyecto es una plataforma digital que busca convertir el financiamiento en un proceso simple y sin trámites burocráticos.",
+    githubURL: "",
+    launchURL: "https://distritopyme.com/",
+    pageURL: "",
+    skills: ["React", "Redux", "Express", "Mongodb"].reverse(),
+  },
+
+  {
     title: "sortmash",
     thumbnail: getThumbnail("sortmash", "gif"),
     finished: true,
@@ -52,19 +105,6 @@ export const featuredProjects: ListProject = [
     skills: ["React", "HTML5", "CSS3"],
   },
   {
-    title: "Monopolio",
-    thumbnail: getThumbnail("monopolio", "gif"),
-    finished: true,
-    descriptionEn:
-      "Monopolio is an online platform that provides a marketplace for buying and selling real estate properties in Mexico. The platform connects buyers and sellers using artificial intelligence to help users make decisions about purchasing or selling properties.",
-    descriptionEs:
-      "Monopolio es una plataforma en línea que provee un mercado para comprar y vender inmuebles en México. La plataforma conecta a compradores y vendedores usando inteligencia artificial para ayudar a los usuarios a tomar decisiones en la compra o venta de inmuebles.",
-    githubURL: "",
-    launchURL: `https://monopolio.com.mx/`,
-    pageURL: "",
-    skills: ["AWS", "Next", "React"],
-  },
-  {
     title: "pokeapi",
     thumbnail: getThumbnail("pokeapi", "gif"),
     finished: true,
@@ -76,6 +116,19 @@ export const featuredProjects: ListProject = [
     launchURL: `${GITHUB_PAGE}/pokeapi-client`,
     pageURL: "",
     skills: ["MongoDB", "Express", "Sockets", "React"],
+  },
+  {
+    title: "almerimur",
+    thumbnail: getThumbnail("almerimur"),
+    finished: true,
+    descriptionEn:
+      "In this project I built a system that allows managing the jobs carried out by the employees.",
+    descriptionEs:
+      "En este proyecto desarrolle un sistema que permite administrar los trabajos realizados por los empleados.",
+    githubURL: ``,
+    launchURL: ``,
+    pageURL: "projects/job-system",
+    skills: ["React", "React Native", "PHP"].reverse(),
   },
   {
     title: "Animated mobile ToDo",
@@ -101,19 +154,7 @@ export const featuredProjects: ListProject = [
     pageURL: "",
     skills: ["React", "Typescript", "SASS", "Tailwindcss"],
   },
-  {
-    title: "almerimur",
-    thumbnail: getThumbnail("almerimur"),
-    finished: true,
-    descriptionEn:
-      "In this project I built a system that allows managing the jobs carried out by the employees.",
-    descriptionEs:
-      "En este proyecto desarrolle un sistema que permite administrar los trabajos realizados por los empleados.",
-    githubURL: ``,
-    launchURL: ``,
-    pageURL: "projects/job-system",
-    skills: ["React", "React Native", "PHP"].reverse(),
-  },
+
   {
     title: "Atomic Labs",
     thumbnail: getThumbnail("atomic_labs"),
@@ -125,18 +166,5 @@ export const featuredProjects: ListProject = [
     launchURL: `${GITHUB_PAGE}/atomic-labs`,
     pageURL: "",
     skills: ["Next.js", "React"],
-  },
-  {
-    title: "distrito pyme",
-    thumbnail: getThumbnail("distrito_pyme"),
-    finished: true,
-    descriptionEn:
-      "I collaborated in the creation fo this project, this project is a digital platform that seeks to turn financing into a simple process and without bureaucratic procedures.",
-    descriptionEs:
-      "Colaboré en la creación de este proyecto, este proyecto es una plataforma digital que busca convertir el financiamiento en un proceso simple y sin trámites burocráticos.",
-    githubURL: "",
-    launchURL: "https://distritopyme.com/",
-    pageURL: "",
-    skills: ["React", "Redux", "Node.js", "Express", "Mongodb"].reverse(),
   },
 ];

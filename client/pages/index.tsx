@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import { Navbar, Dashboard, About, BottomMenu } from "components";
+import GithubIcon from "components/Common/Social/GithubIcon";
 
 const IndexPage = () => (
   <Fragment>
@@ -19,6 +20,7 @@ const IndexPage = () => (
     <Dashboard />
     <About />
     <BottomMenu />
+    <GithubIcon></GithubIcon>
   </Fragment>
 );
 
