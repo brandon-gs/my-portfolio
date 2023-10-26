@@ -1,9 +1,27 @@
+import { CSSObject } from "tss-react";
 import { makeStyles } from "tss-react/mui";
+import theme from "utils/theme";
 
 const transition =
   "all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s";
 
-export default makeStyles()((theme) => ({
+const BADGE_HEIGHT = 40;
+
+const commonBadgeStyles: CSSObject = {
+  padding: theme.spacing(0.5, 4, 0.5, 4),
+  fontSize: 16,
+  fontWeight: "bold",
+  zIndex: 100,
+  "& p": {
+    margin: 0,
+  },
+};
+
+export default makeStyles<{
+  index: number;
+  isProfessional?: boolean;
+  isFinished?: boolean;
+}>()((theme, { index, isProfessional, isFinished }) => ({
   container: {
     display: "grid",
     gap: 10,
@@ -19,6 +37,7 @@ export default makeStyles()((theme) => ({
   },
   infoContainer: {
     position: "relative",
+    paddingTop: 20,
     gridArea: "1 / 1 / -1 / 7",
     textAlign: "inherit",
     [theme.breakpoints.down("md")]: {
@@ -28,6 +47,7 @@ export default makeStyles()((theme) => ({
     },
   },
   imageContainer: {
+    marginTop: BADGE_HEIGHT,
     boxShadow: "0 10px 30px -15px #1e3799",
     gridArea: "1 / 6 / -1 / -1",
     position: "relative",
@@ -210,4 +230,67 @@ export default makeStyles()((theme) => ({
       filter: "brightness(35%)",
     },
   },
+  badgeType: {
+    ...getBadgeColor("projectType", isProfessional),
+    ...commonBadgeStyles,
+  },
+  badgeProgress: {
+    ...getBadgeColor("progress", isFinished),
+    ...commonBadgeStyles,
+  },
+  badgeWebType: {
+    ...getBadgeColor("webApp", true),
+    ...commonBadgeStyles,
+  },
+  badgeAppType: {
+    ...getBadgeColor("mobileApp", true),
+    ...commonBadgeStyles,
+  },
+  badges: {
+    position: "absolute",
+    marginTop: -BADGE_HEIGHT,
+    ...(index % 2 === 0 ? { left: 0 } : { right: 0 }),
+    display: "flex",
+    flexDirection: "row-reverse",
+    columnGap: 8,
+  },
 }));
+
+type BadgesTypes = "projectType" | "progress" | "mobileApp" | "webApp";
+
+const getBadgeColor = (type: BadgesTypes, value: boolean) => {
+  if (type === "projectType") {
+    return value // value = is professional
+      ? {
+          backgroundColor: theme.palette.primary.dark,
+          color: theme.palette.primary.contrastText,
+        }
+      : {
+          backgroundColor: theme.palette.primary.light,
+          color: theme.palette.primary.contrastText,
+        };
+  }
+  if (type === "progress") {
+    return value // value = is finished
+      ? {
+          backgroundColor: theme.palette.success.main,
+          color: theme.palette.primary.contrastText,
+        }
+      : {
+          backgroundColor: theme.palette.warning.light,
+          color: theme.palette.warning.contrastText,
+        };
+  }
+  if (type === "webApp") {
+    return {
+      backgroundColor: theme.palette.error.light,
+      color: theme.palette.error.contrastText,
+    };
+  }
+  if (type === "mobileApp") {
+    return {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
+    };
+  }
+};

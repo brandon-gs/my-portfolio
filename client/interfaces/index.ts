@@ -14,6 +14,9 @@ export interface Project {
   githubURL: string;
   launchURL: string;
   pageURL: string;
+  isProfessional?: boolean;
+  isMobileApp?: boolean;
+  isWebApp?: boolean;
 }
 
 export type ListProject = Array<Project>;

@@ -17,11 +17,19 @@ export default function CardProject({
   project,
   index,
 }: Props): React.ReactElement {
-  const { classes } = useStyles();
+  const { classes } = useStyles({
+    index,
+    isProfessional: project.isProfessional,
+    isFinished: project.finished,
+  });
 
   const localeEs = {
-    progress: "Proyecto en progreso",
-    finish: "Proyecto terminado",
+    progress: "En progreso",
+    finish: "Terminado",
+    professional: "Profesional",
+    personal: "Personal",
+    web: "Web",
+    mobile: "Móvil",
     description: project.descriptionEs,
     tooltips: {
       info: "Leer más",
@@ -30,8 +38,12 @@ export default function CardProject({
     },
   };
   const localeEn = {
-    progress: "Project in progress",
-    finish: "Finished project",
+    progress: "In progress",
+    finish: "Finished",
+    professional: "Professional",
+    personal: "Personal",
+    web: "Web",
+    mobile: "Mobile",
     description: project.descriptionEn,
     tooltips: {
       info: "Read more",
@@ -52,14 +64,6 @@ export default function CardProject({
   return (
     <div className={classes.container} style={{ direction, textAlign }}>
       <div className={classes.infoContainer}>
-        <Typography
-          component="p"
-          variant="body2"
-          gutterBottom
-          className={project.finished ? classes.finished : classes.inProgress}
-        >
-          {project.finished ? t.finish : t.progress}
-        </Typography>
         <Typography variant="h4" component="h2" className={classes.title}>
           {project.title}
         </Typography>
@@ -124,7 +128,26 @@ export default function CardProject({
           )}
         </div>
       </div>
+
       <div className={classes.imageContainer}>
+        <div className={classes.badges}>
+          <div className={classes.badgeType}>
+            <p>{project.isProfessional ? t.professional : t.personal}</p>
+          </div>
+          <div className={classes.badgeProgress}>
+            <p>{project.finished ? t.finish : t.progress}</p>
+          </div>
+          {project.isWebApp && (
+            <div className={classes.badgeWebType}>
+              <p>{t.web}</p>
+            </div>
+          )}
+          {project.isMobileApp && (
+            <div className={classes.badgeAppType}>
+              <p>{t.mobile}</p>
+            </div>
+          )}
+        </div>
         <Link
           href={
             project.launchURL
