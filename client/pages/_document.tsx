@@ -26,14 +26,20 @@ class MyDocument extends Document {
   render(): JSX.Element {
     const isProduction = process.env.NODE_ENV === "production";
     return (
-      <Html lang="en">
+      <Html lang={this.props.locale || "en"}>
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta name="author" content="BrandonGS" />
           <link rel="shortcut icon" href={`/favicon.ico`} />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap"
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {(this.props as any).emotionStyleTags}

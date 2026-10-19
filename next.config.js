@@ -5,6 +5,10 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
  */
 module.exports = {
   trailingSlash: true,
+  async redirects() {
+    // The project list now lives on the home page.
+    return [{ source: "/projects", destination: "/#projects", permanent: true }];
+  },
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",

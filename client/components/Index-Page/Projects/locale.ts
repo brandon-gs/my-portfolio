@@ -1,0 +1,61 @@
+export const localeEs = {
+  eyebrow: "Proyectos",
+  title: "Productos reales, en producción",
+  intro:
+    "Trabajo para empresas de e‑commerce, finanzas y bienes raíces, más algunos proyectos personales.",
+  featuredLabel: "Proyecto principal",
+  featuredTags: ["E‑commerce", "Tienda web", "App iOS y Android"],
+  featuredSummary:
+    "Tienda en línea de tecnología en México. Es el proyecto donde más años he trabajado y el de mayor escala en mi carrera.",
+  featuredRoleLabel: "Qué hice",
+  featuredRole: [
+    "Desarrollo de la tienda web con Vue y Nuxt.",
+    "Desarrollo de la app de compra para iOS y Android con React Native.",
+    "Componentes reutilizables documentados en Storybook.",
+    "Pruebas automatizadas con Jest para cuidar cada versión.",
+  ],
+  featuredCta: "Visitar cyberpuerta.mx",
+  professionalTitle: "Más proyectos profesionales",
+  personalTitle: "Proyectos personales",
+  personalShow: "Ver proyectos personales",
+  personalHide: "Ocultar proyectos personales",
+  visit: "Visitar sitio",
+  code: "Ver código",
+  details: "Ver detalles",
+  web: "Web",
+  mobile: "Móvil",
+  inProgress: "En desarrollo",
+  offline: "Ya no está en línea",
+  archive: "Ver versión archivada",
+};
+
+export const localeEn: typeof localeEs = {
+  eyebrow: "Projects",
+  title: "Real products, in production",
+  intro:
+    "Work for e‑commerce, finance and real estate companies, plus a few personal projects.",
+  featuredLabel: "Main project",
+  featuredTags: ["E‑commerce", "Web store", "iOS & Android app"],
+  featuredSummary:
+    "A consumer electronics online store in Mexico. It’s where I’ve worked the longest, and the largest product of my career.",
+  featuredRoleLabel: "What I did",
+  featuredRole: [
+    "Building the web store with Vue and Nuxt.",
+    "Building the iOS and Android shopping app with React Native.",
+    "Reusable components documented in Storybook.",
+    "Automated tests with Jest to keep every release safe.",
+  ],
+  featuredCta: "Visit cyberpuerta.mx",
+  professionalTitle: "More professional work",
+  personalTitle: "Personal projects",
+  personalShow: "Show personal projects",
+  personalHide: "Hide personal projects",
+  visit: "Visit site",
+  code: "View code",
+  details: "View details",
+  web: "Web",
+  mobile: "Mobile",
+  inProgress: "In progress",
+  offline: "No longer online",
+  archive: "View archived version",
+};

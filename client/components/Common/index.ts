@@ -1,3 +1,3 @@
-import Link from "./Link";
-export { default as Link } from "./Link";
-export default { Link };
+import Seo from "./Seo";
+export { default as Seo } from "./Seo";
+export default { Seo };

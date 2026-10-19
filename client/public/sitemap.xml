@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://brandongs.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://brandongs.vercel.app/es/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://brandongs.vercel.app/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/contact/"/>
+  </url>
+  <url>
+    <loc>https://brandongs.vercel.app/es/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/contact/"/>
+  </url>
+  <url>
+    <loc>https://brandongs.vercel.app/projects/job-system/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/projects/job-system/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/projects/job-system/"/>
+  </url>
+  <url>
+    <loc>https://brandongs.vercel.app/es/projects/job-system/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://brandongs.vercel.app/es/projects/job-system/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandongs.vercel.app/projects/job-system/"/>
+  </url>
+</urlset>

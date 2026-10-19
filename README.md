@@ -20,7 +20,9 @@ Has i18n implementation to get a portfolio with multiple languages
 
 A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
 
-This project is deployed in [brandongs.me](https://www.brandongs.me):
+This project is deployed at [brandongs.vercel.app](https://brandongs.vercel.app).
+
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://brandongs.vercel.app`) so canonical URLs, `hreflang` links and social images point to the right domain. It defaults to `https://brandongs.vercel.app`. If the domain changes, also update `client/public/sitemap.xml` and `client/public/robots.txt`.
 
 ## TODO
 

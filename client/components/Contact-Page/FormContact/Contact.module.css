@@ -1,0 +1,219 @@
+.section {
+  padding: clamp(48px, 7vw, 88px) max(var(--gutter), calc((100% - var(--container)) / 2)) 0;
+  color: var(--ink);
+}
+.section a { text-decoration: none; }
+
+.header { max-width: 680px; margin-bottom: clamp(32px, 5vw, 48px); }
+.eyebrow {
+  margin: 0 0 14px;
+  font: 500 14px/1.4 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.title {
+  margin: 0;
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+.intro { margin: 18px 0 0; font-size: 18px; line-height: 1.6; color: var(--muted); }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+/* Channel cards */
+.channels { display: flex; flex-direction: column; gap: 16px; }
+.card {
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+.cardPrimary {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #e9efe6;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 4px 12px 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  font-weight: 600;
+  color: #cfe7d8;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #6fcf97; }
+.cardTitle { margin: 0 0 8px; font-size: 21px; letter-spacing: -0.015em; font-weight: 600; }
+.cardPrimary .cardTitle { color: #fff; font-size: 26px; }
+.cardText { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.cardPrimary .cardText { color: #b7c4bb; }
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 0 22px;
+  border-radius: 10px;
+  background: #f7f8f2;
+  color: var(--ink) !important;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+.primary:hover { background: #d9eadf; }
+.cardPrimary a:focus-visible { outline-color: #9fd3b4; }
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 6px 6px 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+}
+.email {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink) !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.email:hover { color: var(--accent) !important; }
+.copy {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  color: var(--ink);
+  font: 600 14px/1 var(--font-sans);
+  cursor: pointer;
+}
+.copy:hover { border-color: var(--ink); }
+
+.links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; }
+.links a { font-size: 15px; font-weight: 600; color: var(--accent-strong); }
+.links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.copyHint { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Form */
+.form {
+  padding: clamp(22px, 3.5vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-card);
+}
+.formTitle { margin: 0 0 6px; font-size: 24px; letter-spacing: -0.02em; font-weight: 600; }
+.formText { margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: var(--muted); }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+}
+.field > span, .field > legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.field > span { margin-bottom: 0; }
+.field input[type="text"], .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.5 var(--font-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field textarea { resize: vertical; min-height: 140px; }
+.field input::placeholder, .field textarea::placeholder { color: #8a9a90; }
+.field input[type="text"]:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.types { display: flex; flex-wrap: wrap; gap: 8px; }
+.type {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.type:hover { border-color: var(--ink); }
+.type input { position: absolute; opacity: 0; pointer-events: none; }
+.type:focus-within { outline: 3px solid var(--signal); outline-offset: 2px; }
+.typeActive { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+  font: 600 16px/1 var(--font-sans);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.submit:hover { background: var(--accent-strong); }
+.fallback { margin: 14px 0 0; font-size: 14px; line-height: 1.6; color: var(--muted); text-align: center; }
+.fallback a { color: var(--ink-soft); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .primary { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary, .type, .submit, .field input, .field textarea { transition: none; }
+}

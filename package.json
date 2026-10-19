@@ -8,7 +8,8 @@
     "build": "next build client/",
     "export": "next export client/",
     "start": "next start client/",
-    "lint": "next lint client/"
+    "lint": "next lint client/",
+    "type-check": "tsc --noEmit -p client/tsconfig.json"
   },
   "keywords": [],
   "author": "",

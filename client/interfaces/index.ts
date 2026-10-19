@@ -17,6 +17,10 @@ export interface Project {
   isProfessional?: boolean;
   isMobileApp?: boolean;
   isWebApp?: boolean;
+  /** The live site is down; keep launchURL for reference but don't link to it. */
+  offline?: boolean;
+  /** Optional archived copy (e.g. Wayback Machine) for offline projects. */
+  archiveURL?: string;
 }
 
 export type ListProject = Array<Project>;

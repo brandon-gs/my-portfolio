@@ -38,3 +38,8 @@ yarn-error.log*
 debug.log
 
 bfg.jar
+# typescript incremental build info
+client/tsconfig.tsbuildinfo
+
+# local scratch output (image prompts, originals)
+/output

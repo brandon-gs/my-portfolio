@@ -1,92 +1,149 @@
-// Componentes
-import Image from "next/image";
-import { Container, Grid, Typography } from "@mui/material";
-import { MailOutline } from "@mui/icons-material";
-// SVG
-// import Fiverr from "./fiverr.svg";
-// import Workana from "./workana.svg";
-// Styles
-import useStyles from "./styles";
-// Locale
-import { localeEn, localeEs } from "./locale";
+import { FormEvent, useRef, useState } from "react";
 import { useTranslation } from "hooks";
+import { profile } from "utils/profile";
+import { events } from "utils/analytics";
+import { localeEn, localeEs } from "./locale";
+import styles from "./Contact.module.css";
 
-// const WORKANA_PROFILE =
-// "https://www.workana.com/freelancer/60d428f6d3701a152e234e0b1b64f406";
-
-const FIVERR_GIG =
-  "https://www.fiverr.com/brandongs180/create-your-react-js-application-with-next-js-and-mongodb";
-
-export default function FormContact(): React.ReactElement {
-  const { classes } = useStyles();
+export default function FormContact(): JSX.Element {
   const { t } = useTranslation(localeEs, localeEn);
+  const [name, setName] = useState("");
+  const [type, setType] = useState(0);
+  const [message, setMessage] = useState("");
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "manual">("idle");
+  const emailRef = useRef<HTMLAnchorElement>(null);
+
+  // If the clipboard API is blocked, select the address so the visitor can copy it by hand.
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopyState("copied");
+      setTimeout(() => setCopyState("idle"), 2500);
+    } catch {
+      const selection = window.getSelection();
+      if (emailRef.current && selection) {
+        const range = document.createRange();
+        range.selectNodeContents(emailRef.current);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      setCopyState("manual");
+    }
+  };
+
+  // No backend: build a ready-to-send email and hand it to the visitor's mail app.
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const projectType = t.types[type];
+    events.contactForm(projectType);
+    const subject = `${t.subjectPrefix}: ${projectType}${name ? ` · ${name}` : ""}`;
+    const body = `${t.greeting}\n\n${message}\n\n${t.signature}\n${name}`;
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
-    <Container maxWidth="sm" className={classes.root}>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item>
-          <Typography component="h1" variant="h3" className={classes.title}>
-            {t.title}
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography component="p" variant="body2" className={classes.text}>
-            {t.message}
-          </Typography>
-        </Grid>
-        <Grid item className={classes.emailLinkContainer}>
-          <a href="mailto:brandongs180@gmail.com" className={classes.emailLink}>
-            <MailOutline />
-            <Typography component="span" className={classes.platformName}>
-              {t.email}
-            </Typography>
-          </a>
-        </Grid>
-        {/* <Grid item className={classes.emailLinkContainer}>
-          <a
-            href={WORKANA_PROFILE}
-            target="__blank"
-            className={classes.emailLink}
-          >
-            <div
-              className={classes.emailIcon}
-              style={{
-                width: 24,
-                height: 24,
-                overflow: "hidden",
-                position: "relative",
-              }}
-            >
-              <img
-                src="/svg/workana.svg"
-                className={classes.emailIcon}
-                style={{ position: "absolute", left: -28, height: 23 }}
-              />
+    <section className={styles.section} aria-labelledby="contact-title">
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>{t.eyebrow}</p>
+        <h1 id="contact-title" className={styles.title}>{t.title}</h1>
+        <p className={styles.intro}>{t.intro}</p>
+      </header>
+
+      <div className={styles.layout}>
+        <div className={styles.channels}>
+          <article className={`${styles.card} ${styles.cardPrimary}`}>
+            <p className={styles.badge}>
+              <span className={styles.dot} aria-hidden="true" />
+              {t.workanaBadge}
+            </p>
+            <h2 className={styles.cardTitle}>{t.workanaTitle}</h2>
+            <p className={styles.cardText}>{t.workanaText}</p>
+            <a className={styles.primary} href={profile.workana} target="_blank" rel="noopener noreferrer" onClick={() => events.workana("contact")}>
+              {t.workanaCta}
+            </a>
+          </article>
+
+          <article className={styles.card}>
+            <h2 className={styles.cardTitle}>{t.emailTitle}</h2>
+            <p className={styles.cardText}>{t.emailText}</p>
+            <div className={styles.emailRow}>
+              <a ref={emailRef} className={styles.email} href={`mailto:${profile.email}`} onClick={() => events.email("contact_card")}>{profile.email}</a>
+              <button type="button" className={styles.copy} onClick={copyEmail}>
+                {copyState === "copied" ? t.copied : t.copy}
+              </button>
             </div>
-            {t.workana}
-          </a>
-        </Grid> */}
-        <Grid item className={classes.emailLinkContainer}>
-          <a href={FIVERR_GIG} target="__blank" className={classes.emailLink}>
-            <Image src="/svg/fiverr.svg" height={18} width={24} />
-            {/* <Fiverr
-              className={classes.emailIcon}
-              style={{
-                width: 24,
-                height: 18,
-              }}
-            /> */}
-            <Typography component="span" className={classes.platformName}>
-              {t.fiverr}
-            </Typography>
-          </a>
-        </Grid>
-      </Grid>
-    </Container>
+            {copyState === "manual" && <p className={styles.copyHint}>{t.copyManual}</p>}
+            <p className={styles.srOnly} role="status">{copyState === "copied" ? t.copiedAnnouncement : ""}</p>
+          </article>
+
+          <article className={styles.card}>
+            <h2 className={styles.cardTitle}>{t.jobTitle}</h2>
+            <p className={styles.cardText}>{t.jobText}</p>
+            <div className={styles.links}>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" onClick={() => events.linkedin("contact")}>
+                {t.jobLinkedin}
+              </a>
+              <a href={`mailto:${profile.email}?subject=${encodeURIComponent(t.jobSubject)}`}>{t.jobEmail}</a>
+            </div>
+          </article>
+
+        </div>
+
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h2 className={styles.formTitle}>{t.formTitle}</h2>
+          <p className={styles.formText}>{t.formText}</p>
+
+          <label className={styles.field}>
+            <span>{t.nameLabel}</span>
+            <input
+              type="text"
+              name="name"
+              autoComplete="name"
+              value={name}
+              placeholder={t.namePlaceholder}
+              onChange={(event) => setName(event.target.value)}
+              required
+            />
+          </label>
+
+          <fieldset className={styles.field}>
+            <legend>{t.typeLabel}</legend>
+            <div className={styles.types}>
+              {t.types.map((label, index) => (
+                <label key={label} className={`${styles.type} ${type === index ? styles.typeActive : ""}`}>
+                  <input
+                    type="radio"
+                    name="type"
+                    value={index}
+                    checked={type === index}
+                    onChange={() => setType(index)}
+                  />
+                  {label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <label className={styles.field}>
+            <span>{t.messageLabel}</span>
+            <textarea
+              name="message"
+              rows={6}
+              value={message}
+              placeholder={t.messagePlaceholder}
+              onChange={(event) => setMessage(event.target.value)}
+              required
+            />
+          </label>
+
+          <button type="submit" className={styles.submit}>
+            {t.submit}
+          </button>
+          <p className={styles.fallback}>
+            {t.fallback} <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          </p>
+        </form>
+      </div>
+    </section>
   );
 }
